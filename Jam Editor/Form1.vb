@@ -127,7 +127,7 @@
         KontextHilfe.main(sender)
     End Sub
 
-    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click, vAppdata.Click, vAllAppdata.Click, vProgramFiles.Click, vPrograms.Click
+    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click
         KontextHilfe.variablen(sender)
     End Sub
 End Class

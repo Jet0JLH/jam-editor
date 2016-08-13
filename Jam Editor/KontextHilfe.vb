@@ -158,14 +158,6 @@
                 insert("%_gd%", False)
             Case "v3"
                 insert("%_prozent%", False)
-            Case "vAppdata"
-                insert("%appdata%", False)
-            Case "vAllAppdata"
-                insert("%allappdata%", False)
-            Case "vProgramFiles"
-                insert("%programfiles%", False)
-            Case "vPrograms"
-                insert("%programs%", False)
         End Select
     End Sub
 End Module

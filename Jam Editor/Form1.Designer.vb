@@ -69,13 +69,6 @@ Partial Class Form1
         Me.v1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PfadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.vAllAppdata = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.vAppdata = New System.Windows.Forms.ToolStripMenuItem()
-        Me.vProgramFiles = New System.Windows.Forms.ToolStripMenuItem()
-        Me.vPrograms = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.MenuStrip1.SuspendLayout()
@@ -123,7 +116,7 @@ Partial Class Form1
         '
         Me.SpeichernUnterToolStripMenuItem.Name = "SpeichernUnterToolStripMenuItem"
         Me.SpeichernUnterToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-                    Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
         Me.SpeichernUnterToolStripMenuItem.Size = New System.Drawing.Size(282, 22)
         Me.SpeichernUnterToolStripMenuItem.Text = "Speichern unter"
         '
@@ -338,7 +331,7 @@ Partial Class Form1
         '
         'VariablenToolStripMenuItem
         '
-        Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.PfadeToolStripMenuItem})
+        Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
         Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
@@ -376,50 +369,6 @@ Partial Class Form1
         Me.v3.Name = "v3"
         Me.v3.Size = New System.Drawing.Size(155, 22)
         Me.v3.Text = "%"
-        '
-        'PfadeToolStripMenuItem
-        '
-        Me.PfadeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AllToolStripMenuItem, Me.ToolStripSeparator3, Me.vAppdata, Me.vProgramFiles, Me.vPrograms})
-        Me.PfadeToolStripMenuItem.Enabled = False
-        Me.PfadeToolStripMenuItem.Name = "PfadeToolStripMenuItem"
-        Me.PfadeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PfadeToolStripMenuItem.Text = "Pfade"
-        '
-        'AllToolStripMenuItem
-        '
-        Me.AllToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vAllAppdata})
-        Me.AllToolStripMenuItem.Name = "AllToolStripMenuItem"
-        Me.AllToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AllToolStripMenuItem.Text = "All"
-        '
-        'vAllAppdata
-        '
-        Me.vAllAppdata.Name = "vAllAppdata"
-        Me.vAllAppdata.Size = New System.Drawing.Size(119, 22)
-        Me.vAllAppdata.Text = "Appdata"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(149, 6)
-        '
-        'vAppdata
-        '
-        Me.vAppdata.Name = "vAppdata"
-        Me.vAppdata.Size = New System.Drawing.Size(152, 22)
-        Me.vAppdata.Text = "Appdata"
-        '
-        'vProgramFiles
-        '
-        Me.vProgramFiles.Name = "vProgramFiles"
-        Me.vProgramFiles.Size = New System.Drawing.Size(152, 22)
-        Me.vProgramFiles.Text = "ProgramFiles"
-        '
-        'vPrograms
-        '
-        Me.vPrograms.Name = "vPrograms"
-        Me.vPrograms.Size = New System.Drawing.Size(152, 22)
-        Me.vPrograms.Text = "Programs"
         '
         'OpenFileDialog1
         '
@@ -495,12 +444,5 @@ Partial Class Form1
     Friend WithEvents v2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents v3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kMkDir As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PfadeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents vAllAppdata As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents vAppdata As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents vProgramFiles As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents vPrograms As System.Windows.Forms.ToolStripMenuItem
 
 End Class
