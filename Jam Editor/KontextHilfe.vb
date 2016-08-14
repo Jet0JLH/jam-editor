@@ -162,6 +162,11 @@
                         End If
                     End If
                 End If
+            Case "kKommentar"
+                Dim temp As String = InputBox("Bitte Kommentar eingeben", "Kommentar")
+                If temp <> "" Then
+                    insert("# " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
