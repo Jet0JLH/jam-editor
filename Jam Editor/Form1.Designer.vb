@@ -63,6 +63,9 @@ Partial Class Form1
         Me.kWriteFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.kWriteFileAppend = New System.Windows.Forms.ToolStripMenuItem()
         Me.kMkDir = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TasksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kTaskKill = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kTaskClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.VariablenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ZeichenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.vZeilenumbruch = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,9 +74,7 @@ Partial Class Form1
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.TasksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kTaskKill = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kTaskClose = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kIfTaskExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -164,13 +165,13 @@ Partial Class Form1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
         '
         'BefehleToolStripMenuItem
         '
         Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -231,7 +232,7 @@ Partial Class Form1
         '
         'EntscheidungenToolStripMenuItem
         '
-        Me.EntscheidungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kLable, Me.kGoto, Me.kIfDirExist, Me.kIfFileExist, Me.kExit})
+        Me.EntscheidungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kLable, Me.kGoto, Me.kIfDirExist, Me.kIfFileExist, Me.kIfTaskExist, Me.kExit})
         Me.EntscheidungenToolStripMenuItem.Name = "EntscheidungenToolStripMenuItem"
         Me.EntscheidungenToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.EntscheidungenToolStripMenuItem.Text = "Entscheidungen"
@@ -332,18 +333,37 @@ Partial Class Form1
         Me.kMkDir.Size = New System.Drawing.Size(160, 22)
         Me.kMkDir.Text = "mkDir"
         '
+        'TasksToolStripMenuItem
+        '
+        Me.TasksToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTaskKill, Me.kTaskClose})
+        Me.TasksToolStripMenuItem.Name = "TasksToolStripMenuItem"
+        Me.TasksToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.TasksToolStripMenuItem.Text = "Tasks"
+        '
+        'kTaskKill
+        '
+        Me.kTaskKill.Name = "kTaskKill"
+        Me.kTaskKill.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskKill.Text = "taskKill"
+        '
+        'kTaskClose
+        '
+        Me.kTaskClose.Name = "kTaskClose"
+        Me.kTaskClose.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskClose.Text = "taskClose"
+        '
         'VariablenToolStripMenuItem
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
         '
         Me.ZeichenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vZeilenumbruch, Me.v1, Me.v2, Me.v3})
         Me.ZeichenToolStripMenuItem.Name = "ZeichenToolStripMenuItem"
-        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeichenToolStripMenuItem.Text = "Sonderzeichen"
         '
         'vZeilenumbruch
@@ -384,24 +404,11 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
-        'TasksToolStripMenuItem
+        'kIfTaskExist
         '
-        Me.TasksToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTaskKill, Me.kTaskClose})
-        Me.TasksToolStripMenuItem.Name = "TasksToolStripMenuItem"
-        Me.TasksToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.TasksToolStripMenuItem.Text = "Tasks"
-        '
-        'kTaskKill
-        '
-        Me.kTaskKill.Name = "kTaskKill"
-        Me.kTaskKill.Size = New System.Drawing.Size(152, 22)
-        Me.kTaskKill.Text = "taskKill"
-        '
-        'kTaskClose
-        '
-        Me.kTaskClose.Name = "kTaskClose"
-        Me.kTaskClose.Size = New System.Drawing.Size(152, 22)
-        Me.kTaskClose.Text = "taskClose"
+        Me.kIfTaskExist.Name = "kIfTaskExist"
+        Me.kIfTaskExist.Size = New System.Drawing.Size(152, 22)
+        Me.kIfTaskExist.Text = "ifTaskExist"
         '
         'Form1
         '
@@ -472,5 +479,6 @@ Partial Class Form1
     Friend WithEvents TasksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kTaskKill As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kTaskClose As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kIfTaskExist As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -149,6 +149,19 @@
                 If temp <> "" Then
                     insert("taskClose " & temp)
                 End If
+            Case "kIfTaskExist"
+                Dim temp As String = InputBox("Welcher Task soll geprüft werden?", "IfTaskExist")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn der Task aktiv ist?", "IfTaskExist")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn der Task nicht aktiv ist?" & vbCrLf & "Wenn dies nicht benötigt wird, bitte das Feld leer lassen oder abbrechen!", "IfTaskExist")
+                        If temp3 = "" Then
+                            insert("ifFileExist " & temp & "|" & temp2)
+                        Else
+                            insert("ifFileExist " & temp & "|" & temp2 & "|" & temp3)
+                        End If
+                    End If
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
