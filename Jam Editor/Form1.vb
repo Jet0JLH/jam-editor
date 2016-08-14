@@ -130,4 +130,8 @@
     Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click
         KontextHilfe.variablen(sender)
     End Sub
+
+    Private Sub InfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InfoToolStripMenuItem.Click
+        MsgBox("Jam Editor Version: " & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor, MsgBoxStyle.Information)
+    End Sub
 End Class

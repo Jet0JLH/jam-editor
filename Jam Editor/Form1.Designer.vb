@@ -75,13 +75,14 @@ Partial Class Form1
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.InfoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(852, 24)
@@ -410,6 +411,12 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
+        'InfoToolStripMenuItem
+        '
+        Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
+        Me.InfoToolStripMenuItem.Text = "Info"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -480,5 +487,6 @@ Partial Class Form1
     Friend WithEvents kTaskClose As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kIfTaskExist As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kKommentar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
