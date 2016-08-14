@@ -161,13 +161,13 @@ Partial Class Form1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
         '
         'BefehleToolStripMenuItem
         '
         Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -333,7 +333,7 @@ Partial Class Form1
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
@@ -355,6 +355,7 @@ Partial Class Form1
         Me.v1.Name = "v1"
         Me.v1.Size = New System.Drawing.Size(155, 22)
         Me.v1.Text = "|"
+        Me.v1.Visible = False
         '
         'v2
         '
@@ -362,6 +363,7 @@ Partial Class Form1
         Me.v2.Name = "v2"
         Me.v2.Size = New System.Drawing.Size(155, 22)
         Me.v2.Text = ">"
+        Me.v2.Visible = False
         '
         'v3
         '
@@ -369,6 +371,7 @@ Partial Class Form1
         Me.v3.Name = "v3"
         Me.v3.Size = New System.Drawing.Size(155, 22)
         Me.v3.Text = "%"
+        Me.v3.Visible = False
         '
         'OpenFileDialog1
         '
