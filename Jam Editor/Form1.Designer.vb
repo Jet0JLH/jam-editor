@@ -71,6 +71,9 @@ Partial Class Form1
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.TasksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kTaskKill = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kTaskClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -165,7 +168,7 @@ Partial Class Form1
         '
         'BefehleToolStripMenuItem
         '
-        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem})
+        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
         Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
@@ -180,31 +183,31 @@ Partial Class Form1
         'kMessage
         '
         Me.kMessage.Name = "kMessage"
-        Me.kMessage.Size = New System.Drawing.Size(120, 22)
+        Me.kMessage.Size = New System.Drawing.Size(152, 22)
         Me.kMessage.Text = "message"
         '
         'kSleep
         '
         Me.kSleep.Name = "kSleep"
-        Me.kSleep.Size = New System.Drawing.Size(120, 22)
+        Me.kSleep.Size = New System.Drawing.Size(152, 22)
         Me.kSleep.Text = "sleep"
         '
         'kShell
         '
         Me.kShell.Name = "kShell"
-        Me.kShell.Size = New System.Drawing.Size(120, 22)
+        Me.kShell.Size = New System.Drawing.Size(152, 22)
         Me.kShell.Text = "shell"
         '
         'kStart
         '
         Me.kStart.Name = "kStart"
-        Me.kStart.Size = New System.Drawing.Size(120, 22)
+        Me.kStart.Size = New System.Drawing.Size(152, 22)
         Me.kStart.Text = "start"
         '
         'kStartWait
         '
         Me.kStartWait.Name = "kStartWait"
-        Me.kStartWait.Size = New System.Drawing.Size(120, 22)
+        Me.kStartWait.Size = New System.Drawing.Size(152, 22)
         Me.kStartWait.Text = "startwait"
         '
         'ErscheinungsbildToolStripMenuItem
@@ -217,13 +220,13 @@ Partial Class Form1
         'kTitle
         '
         Me.kTitle.Name = "kTitle"
-        Me.kTitle.Size = New System.Drawing.Size(107, 22)
+        Me.kTitle.Size = New System.Drawing.Size(152, 22)
         Me.kTitle.Text = "title"
         '
         'kVisible
         '
         Me.kVisible.Name = "kVisible"
-        Me.kVisible.Size = New System.Drawing.Size(107, 22)
+        Me.kVisible.Size = New System.Drawing.Size(152, 22)
         Me.kVisible.Text = "visible"
         '
         'EntscheidungenToolStripMenuItem
@@ -236,31 +239,31 @@ Partial Class Form1
         'kLable
         '
         Me.kLable.Name = "kLable"
-        Me.kLable.Size = New System.Drawing.Size(145, 22)
+        Me.kLable.Size = New System.Drawing.Size(152, 22)
         Me.kLable.Text = "Sprungmarke"
         '
         'kGoto
         '
         Me.kGoto.Name = "kGoto"
-        Me.kGoto.Size = New System.Drawing.Size(145, 22)
+        Me.kGoto.Size = New System.Drawing.Size(152, 22)
         Me.kGoto.Text = "Goto"
         '
         'kIfDirExist
         '
         Me.kIfDirExist.Name = "kIfDirExist"
-        Me.kIfDirExist.Size = New System.Drawing.Size(145, 22)
+        Me.kIfDirExist.Size = New System.Drawing.Size(152, 22)
         Me.kIfDirExist.Text = "ifDirExist"
         '
         'kIfFileExist
         '
         Me.kIfFileExist.Name = "kIfFileExist"
-        Me.kIfFileExist.Size = New System.Drawing.Size(145, 22)
+        Me.kIfFileExist.Size = New System.Drawing.Size(152, 22)
         Me.kIfFileExist.Text = "ifFileExist"
         '
         'kExit
         '
         Me.kExit.Name = "kExit"
-        Me.kExit.Size = New System.Drawing.Size(145, 22)
+        Me.kExit.Size = New System.Drawing.Size(152, 22)
         Me.kExit.Text = "exit"
         '
         'DateiUndOrdnerToolStripMenuItem
@@ -381,6 +384,25 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
+        'TasksToolStripMenuItem
+        '
+        Me.TasksToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTaskKill, Me.kTaskClose})
+        Me.TasksToolStripMenuItem.Name = "TasksToolStripMenuItem"
+        Me.TasksToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.TasksToolStripMenuItem.Text = "Tasks"
+        '
+        'kTaskKill
+        '
+        Me.kTaskKill.Name = "kTaskKill"
+        Me.kTaskKill.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskKill.Text = "taskKill"
+        '
+        'kTaskClose
+        '
+        Me.kTaskClose.Name = "kTaskClose"
+        Me.kTaskClose.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskClose.Text = "taskClose"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -447,5 +469,8 @@ Partial Class Form1
     Friend WithEvents v2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents v3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kMkDir As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TasksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kTaskKill As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kTaskClose As System.Windows.Forms.ToolStripMenuItem
 
 End Class

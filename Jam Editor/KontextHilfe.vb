@@ -139,6 +139,16 @@
                 If temp <> "" Then
                     insert("mkDir " & temp)
                 End If
+            Case "kTaskKill"
+                Dim temp As String = InputBox("Welcher Task soll gekillt werden?" & vbCrLf & "Tasknamen ohne .exe angeben!", "TaskKill")
+                If temp <> "" Then
+                    insert("taskKill " & temp)
+                End If
+            Case "kTaskClose"
+                Dim temp As String = InputBox("Welcher Task soll versucht werden beendet zu werden?" & vbCrLf & "Tasknamen ohne .exe angeben!", "TaskClose")
+                If temp <> "" Then
+                    insert("taskClose " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
