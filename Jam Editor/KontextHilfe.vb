@@ -72,7 +72,7 @@
                 If temp <> "" Then
                     Dim temp2 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn die Datei existiert?", "IfFileExist")
                     If temp2 <> "" Then
-                        Dim temp3 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn die Datei nicht existiert?" & vbCrLf & "Wenn dies nicht benötigt wird, bitte das Feld leer lassen oder abbrechen!", "IfDirExist")
+                        Dim temp3 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn die Datei nicht existiert?" & vbCrLf & "Wenn dies nicht benötigt wird, bitte das Feld leer lassen oder abbrechen!", "IfFileExist")
                         If temp3 = "" Then
                             insert("ifFileExist " & temp & "|" & temp2)
                         Else
