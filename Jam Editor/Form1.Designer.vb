@@ -32,7 +32,6 @@ Partial Class Form1
         Me.SpeichernUnterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SchließenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BearbeitenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -43,6 +42,7 @@ Partial Class Form1
         Me.kShell = New System.Windows.Forms.ToolStripMenuItem()
         Me.kStart = New System.Windows.Forms.ToolStripMenuItem()
         Me.kStartWait = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kKommentar = New System.Windows.Forms.ToolStripMenuItem()
         Me.ErscheinungsbildToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kTitle = New System.Windows.Forms.ToolStripMenuItem()
         Me.kVisible = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,14 +75,13 @@ Partial Class Form1
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.kKommentar = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.BearbeitenToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(852, 24)
@@ -137,12 +136,6 @@ Partial Class Form1
         Me.SchließenToolStripMenuItem.Size = New System.Drawing.Size(282, 22)
         Me.SchließenToolStripMenuItem.Text = "Schließen"
         '
-        'BearbeitenToolStripMenuItem
-        '
-        Me.BearbeitenToolStripMenuItem.Name = "BearbeitenToolStripMenuItem"
-        Me.BearbeitenToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
-        Me.BearbeitenToolStripMenuItem.Text = "Bearbeiten"
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 497)
@@ -166,13 +159,13 @@ Partial Class Form1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
         '
         'BefehleToolStripMenuItem
         '
         Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -185,32 +178,38 @@ Partial Class Form1
         'kMessage
         '
         Me.kMessage.Name = "kMessage"
-        Me.kMessage.Size = New System.Drawing.Size(152, 22)
+        Me.kMessage.Size = New System.Drawing.Size(136, 22)
         Me.kMessage.Text = "message"
         '
         'kSleep
         '
         Me.kSleep.Name = "kSleep"
-        Me.kSleep.Size = New System.Drawing.Size(152, 22)
+        Me.kSleep.Size = New System.Drawing.Size(136, 22)
         Me.kSleep.Text = "sleep"
         '
         'kShell
         '
         Me.kShell.Name = "kShell"
-        Me.kShell.Size = New System.Drawing.Size(152, 22)
+        Me.kShell.Size = New System.Drawing.Size(136, 22)
         Me.kShell.Text = "shell"
         '
         'kStart
         '
         Me.kStart.Name = "kStart"
-        Me.kStart.Size = New System.Drawing.Size(152, 22)
+        Me.kStart.Size = New System.Drawing.Size(136, 22)
         Me.kStart.Text = "start"
         '
         'kStartWait
         '
         Me.kStartWait.Name = "kStartWait"
-        Me.kStartWait.Size = New System.Drawing.Size(152, 22)
+        Me.kStartWait.Size = New System.Drawing.Size(136, 22)
         Me.kStartWait.Text = "startwait"
+        '
+        'kKommentar
+        '
+        Me.kKommentar.Name = "kKommentar"
+        Me.kKommentar.Size = New System.Drawing.Size(136, 22)
+        Me.kKommentar.Text = "kommentar"
         '
         'ErscheinungsbildToolStripMenuItem
         '
@@ -363,7 +362,7 @@ Partial Class Form1
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
@@ -411,12 +410,6 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
-        'kKommentar
-        '
-        Me.kKommentar.Name = "kKommentar"
-        Me.kKommentar.Size = New System.Drawing.Size(152, 22)
-        Me.kKommentar.Text = "kommentar"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -448,7 +441,6 @@ Partial Class Form1
     Friend WithEvents SpeichernUnterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
-    Friend WithEvents BearbeitenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents BefehleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StandardBefehleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
