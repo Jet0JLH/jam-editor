@@ -167,6 +167,11 @@
                 If temp <> "" Then
                     insert("# " & temp)
                 End If
+            Case "kGoSub"
+                Dim temp As String = InputBox("In welche Sub soll gesprungen werden?", "GoSub")
+                If temp <> "" Then
+                    insert("goSub " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
