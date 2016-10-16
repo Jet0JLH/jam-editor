@@ -12,10 +12,63 @@
                     insert("sleep " & temp)
                 End If
             Case "kShell"
-                Dim temp As String = InputBox("Welcher Shellbefehl soll aufgerufen werden?", "Shell")
-                If temp <> "" Then
-                    insert("shell " & temp)
+                KshellForm.ShowDialog()
+                If KshellForm.abgebrochen = False And KshellForm.TextBox1.Text <> "" Then
+                    Select Case KshellForm.ComboBox1.SelectedIndex
+                        Case 0
+                            Select Case KshellForm.ComboBox3.SelectedIndex
+                                Case 0
+                                    Select Case KshellForm.ComboBox2.SelectedIndex
+                                        Case 0
+                                            insert("shell wait:true|" & KshellForm.TextBox1.Text)
+                                        Case 1
+                                            insert("shell wait:true|focus:false|" & KshellForm.TextBox1.Text)
+                                    End Select
+                                Case 1
+                                    Select Case KshellForm.ComboBox2.SelectedIndex
+                                        Case 0
+                                            insert("shell " & KshellForm.TextBox1.Text)
+                                        Case 1
+                                            insert("shell focus:false|" & KshellForm.TextBox1.Text)
+                                    End Select
+                            End Select
+                        Case 1
+                            Select Case KshellForm.ComboBox3.SelectedIndex
+                                Case 0
+                                    insert("shell winstyle:hidden|wait:true|" & KshellForm.TextBox1.Text)
+                                Case 1
+                                    insert("shell winstyle:hidden|" & KshellForm.TextBox1.Text)
+                            End Select
+                        Case 2
+                            Select Case KshellForm.ComboBox3.SelectedIndex
+                                Case 0
+                                    Select Case KshellForm.ComboBox2.SelectedIndex
+                                        Case 0
+                                            insert("shell winstyle:minimized|wait:true|" & KshellForm.TextBox1.Text)
+                                        Case 1
+                                            insert("shell winstyle:minimized|focus:false" & KshellForm.TextBox1.Text)
+                                    End Select
+                                Case 1
+                                    Select Case KshellForm.ComboBox2.SelectedIndex
+                                        Case 0
+                                            insert("shell winstyle:minimized|wait:true|" & KshellForm.TextBox1.Text)
+                                        Case 1
+                                            insert("shell winstyle:minimized|focus:false" & KshellForm.TextBox1.Text)
+                                    End Select
+                            End Select
+                        Case 3
+                            Select Case KshellForm.ComboBox3.SelectedIndex
+                                Case 0
+                                    insert("shell winstyle:maximized|wait:true|" & KshellForm.TextBox1.Text)
+                                Case 1
+                                    insert("shell winstyle:maximized|" & KshellForm.TextBox1.Text)
+                            End Select
+                    End Select
                 End If
+                'Dim temp As String = InputBox("Welcher Shellbefehl soll aufgerufen werden?", "Shell")
+                'If temp <> "" Then
+                '    insert("shell " & temp)
+                'End If
             Case "kStart", "kStartWait"
                 Dim temp As String = InputBox("Welches Programm soll aufgerufen werden?", "Start")
                 If temp <> "" Then
