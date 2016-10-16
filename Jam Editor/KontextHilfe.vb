@@ -209,9 +209,9 @@
                     If temp2 <> "" Then
                         Dim temp3 As String = InputBox("Zur welcher Sprungmarke soll gesprungen werden wenn der Task nicht aktiv ist?" & vbCrLf & "Wenn dies nicht benötigt wird, bitte das Feld leer lassen oder abbrechen!", "IfTaskExist")
                         If temp3 = "" Then
-                            insert("ifFileExist " & temp & "|" & temp2)
+                            insert("ifTaskExist " & temp & "|" & temp2)
                         Else
-                            insert("ifFileExist " & temp & "|" & temp2 & "|" & temp3)
+                            insert("ifTaskExist " & temp & "|" & temp2 & "|" & temp3)
                         End If
                     End If
                 End If
