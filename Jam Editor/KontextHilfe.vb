@@ -241,6 +241,74 @@
                         End If
                     End If
                 End If
+            Case "kLog"
+                Dim temp As String = InputBox("Sollen die weitere Ausführung des Skripts in einem Log mitgeschrieben werden?" & vbCrLf & "Bitte nur true oder false eingeben!", "Log")
+                If temp <> "" Then
+                    If temp.ToLower = "false" Then
+                        insert("log false")
+                    Else
+                        Dim temp2 As String = InputBox("Pfad und Name der Log Datei angeben.", "Log")
+                        If temp2 <> "" Then
+                            insert("log " & temp & "|" & temp2)
+                        End If
+                    End If
+                End If
+            Case "kSet"
+                Dim temp As String = InputBox("Wie ist der Name der Variable die gesetzt werden soll?", "Set")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Wie soll der Wert der Variable sein?", "Set")
+                    If temp2 <> "" Then
+                        insert("set " & temp & "|" & temp2)
+                    End If
+                End If
+            Case "kReadFile"
+                Dim temp As String = InputBox("Welche Datei soll eingelesen werden?", "ReadFile")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("In welche Variable soll der Inhalt der Textdatei geladen werden?" & vbCrLf & "Variable ohne $ Zeichen angeben!", "ReadFile")
+                    If temp2 <> "" Then
+                        insert("readFile " & temp & ">" & temp2)
+                    End If
+                End If
+            Case "kIfStringEqual"
+                Dim temp As String = InputBox("String 1 oder Variable eingeben?", "IfStringEqual")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("String 2 oder Variable eingeben?", "IfStringEqual")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn die Strings übereinstimmen?", "IfStringEqual")
+                        If temp3 <> "" Then
+                            Dim temp4 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn die Strings nicht übereinstimmen?", "IfStringEqual")
+                            If temp4 <> "" Then
+                                insert("ifStringEqual " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                            Else
+                                insert("ifStringEqual " & temp & "|" & temp2 & "|" & temp3)
+                            End If
+                        End If
+                    End If
+                End If
+            Case "kIfStringContain"
+                Dim temp As String = InputBox("Welcher String oder Variable soll überprüft werden?", "IfStringContain")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Auf welchen String oder Variable soll geprüft werden ob dieser enthalten ist?", "IfStringContain")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn der Strings enthalten ist?", "IfStringContain")
+                        If temp3 <> "" Then
+                            Dim temp4 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn der Strings nicht enthalten ist?", "IfStringContain")
+                            If temp4 <> "" Then
+                                insert("ifStringContain " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                            Else
+                                insert("ifStringContain " & temp & "|" & temp2 & "|" & temp3)
+                            End If
+                        End If
+                    End If
+                End If
+            Case "kCalculate"
+                Dim temp As String = InputBox("In welche Variable soll gespeichert werden?" & vbCrLf & "Variable ohne $ Zeichen angeben!", "Calculate")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Was soll gerechnet werden?", "Calculate")
+                    If temp2 <> "" Then
+                        insert("calculate " & temp & "|" & temp2)
+                    End If
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
