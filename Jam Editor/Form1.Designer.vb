@@ -44,9 +44,11 @@ Partial Class Form1
         Me.kStart = New System.Windows.Forms.ToolStripMenuItem()
         Me.kStartWait = New System.Windows.Forms.ToolStripMenuItem()
         Me.kKommentar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kCalculate = New System.Windows.Forms.ToolStripMenuItem()
         Me.ErscheinungsbildToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kTitle = New System.Windows.Forms.ToolStripMenuItem()
         Me.kVisible = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kLog = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntscheidungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kLable = New System.Windows.Forms.ToolStripMenuItem()
         Me.kGoto = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,6 +56,8 @@ Partial Class Form1
         Me.kIfDirExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfFileExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfTaskExist = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kIfStringEqual = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kIfStringContain = New System.Windows.Forms.ToolStripMenuItem()
         Me.kExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.DateiUndOrdnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kDelDir = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,6 +69,7 @@ Partial Class Form1
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.kWriteFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.kWriteFileAppend = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kReadFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.kMkDir = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.kWget = New System.Windows.Forms.ToolStripMenuItem()
@@ -77,14 +82,12 @@ Partial Class Form1
         Me.v1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.kLog = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kReadFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kIfStringEqual = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kIfStringContain = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kCalculate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kSubstring = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kReplaceString = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -176,13 +179,13 @@ Partial Class Form1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
         '
         'BefehleToolStripMenuItem
         '
-        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem})
+        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem, Me.StringToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -228,6 +231,12 @@ Partial Class Form1
         Me.kKommentar.Size = New System.Drawing.Size(152, 22)
         Me.kKommentar.Text = "kommentar"
         '
+        'kCalculate
+        '
+        Me.kCalculate.Name = "kCalculate"
+        Me.kCalculate.Size = New System.Drawing.Size(152, 22)
+        Me.kCalculate.Text = "calculate"
+        '
         'ErscheinungsbildToolStripMenuItem
         '
         Me.ErscheinungsbildToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTitle, Me.kVisible, Me.kLog})
@@ -246,6 +255,12 @@ Partial Class Form1
         Me.kVisible.Name = "kVisible"
         Me.kVisible.Size = New System.Drawing.Size(152, 22)
         Me.kVisible.Text = "visible"
+        '
+        'kLog
+        '
+        Me.kLog.Name = "kLog"
+        Me.kLog.Size = New System.Drawing.Size(152, 22)
+        Me.kLog.Text = "log"
         '
         'EntscheidungenToolStripMenuItem
         '
@@ -289,6 +304,18 @@ Partial Class Form1
         Me.kIfTaskExist.Name = "kIfTaskExist"
         Me.kIfTaskExist.Size = New System.Drawing.Size(154, 22)
         Me.kIfTaskExist.Text = "ifTaskExist"
+        '
+        'kIfStringEqual
+        '
+        Me.kIfStringEqual.Name = "kIfStringEqual"
+        Me.kIfStringEqual.Size = New System.Drawing.Size(154, 22)
+        Me.kIfStringEqual.Text = "ifStringEqual"
+        '
+        'kIfStringContain
+        '
+        Me.kIfStringContain.Name = "kIfStringContain"
+        Me.kIfStringContain.Size = New System.Drawing.Size(154, 22)
+        Me.kIfStringContain.Text = "ifStringContain"
         '
         'kExit
         '
@@ -356,6 +383,12 @@ Partial Class Form1
         Me.kWriteFileAppend.Size = New System.Drawing.Size(160, 22)
         Me.kWriteFileAppend.Text = "writeFileAppend"
         '
+        'kReadFile
+        '
+        Me.kReadFile.Name = "kReadFile"
+        Me.kReadFile.Size = New System.Drawing.Size(160, 22)
+        Me.kReadFile.Text = "readFile"
+        '
         'kMkDir
         '
         Me.kMkDir.Name = "kMkDir"
@@ -396,7 +429,7 @@ Partial Class Form1
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.kSet})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
@@ -436,6 +469,12 @@ Partial Class Form1
         Me.v3.Text = "%"
         Me.v3.Visible = False
         '
+        'kSet
+        '
+        Me.kSet.Name = "kSet"
+        Me.kSet.Size = New System.Drawing.Size(152, 22)
+        Me.kSet.Text = "set"
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Jam Skript|*.jam"
@@ -444,41 +483,24 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
-        'kLog
+        'StringToolStripMenuItem
         '
-        Me.kLog.Name = "kLog"
-        Me.kLog.Size = New System.Drawing.Size(152, 22)
-        Me.kLog.Text = "log"
+        Me.StringToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kSubstring, Me.kReplaceString})
+        Me.StringToolStripMenuItem.Name = "StringToolStripMenuItem"
+        Me.StringToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.StringToolStripMenuItem.Text = "String"
         '
-        'kSet
+        'kSubstring
         '
-        Me.kSet.Name = "kSet"
-        Me.kSet.Size = New System.Drawing.Size(152, 22)
-        Me.kSet.Text = "set"
+        Me.kSubstring.Name = "kSubstring"
+        Me.kSubstring.Size = New System.Drawing.Size(152, 22)
+        Me.kSubstring.Text = "Substring"
         '
-        'kReadFile
+        'kReplaceString
         '
-        Me.kReadFile.Name = "kReadFile"
-        Me.kReadFile.Size = New System.Drawing.Size(160, 22)
-        Me.kReadFile.Text = "readFile"
-        '
-        'kIfStringEqual
-        '
-        Me.kIfStringEqual.Name = "kIfStringEqual"
-        Me.kIfStringEqual.Size = New System.Drawing.Size(154, 22)
-        Me.kIfStringEqual.Text = "ifStringEqual"
-        '
-        'kIfStringContain
-        '
-        Me.kIfStringContain.Name = "kIfStringContain"
-        Me.kIfStringContain.Size = New System.Drawing.Size(154, 22)
-        Me.kIfStringContain.Text = "ifStringContain"
-        '
-        'kCalculate
-        '
-        Me.kCalculate.Name = "kCalculate"
-        Me.kCalculate.Size = New System.Drawing.Size(152, 22)
-        Me.kCalculate.Text = "calculate"
+        Me.kReplaceString.Name = "kReplaceString"
+        Me.kReplaceString.Size = New System.Drawing.Size(152, 22)
+        Me.kReplaceString.Text = "ReplaceString"
         '
         'Form1
         '
@@ -560,5 +582,8 @@ Partial Class Form1
     Friend WithEvents kIfStringContain As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kReadFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kSet As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StringToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kSubstring As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kReplaceString As System.Windows.Forms.ToolStripMenuItem
 
 End Class

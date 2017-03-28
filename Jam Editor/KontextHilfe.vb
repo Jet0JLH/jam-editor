@@ -309,6 +309,38 @@
                         insert("calculate " & temp & "|" & temp2)
                     End If
                 End If
+            Case "kSubstring"
+                Dim temp As String = InputBox("In welche Variable soll gespeichert werden?", "Substring")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Welcher String oder Variable soll überarbeitet werden?", "Substring")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Bei welchem Index (Null basiert) soll der neue String anfangen?", "Substring")
+                        If temp3 <> "" Then
+                            Dim temp4 As String = InputBox("Wie lang soll der neue String sein? Bei keiner Angabe wird der String am Ende nicht geschnitten.", "Substring")
+                            If temp4 <> "" Then
+                                insert("substring " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                            Else
+                                insert("substring " & temp & "|" & temp2 & "|" & temp3)
+                            End If
+                        End If
+                    End If
+                End If
+            Case "kReplaceString"
+                Dim temp As String = InputBox("In welche Variable soll gespeichert werden?", "ReplaceString")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Welcher String oder Variable soll überarbeitet werden?", "ReplaceString")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Welches Zeichen soll ersetzt werden?", "ReplaceString")
+                        If temp3 <> "" Then
+                            Dim temp4 As String = InputBox("Durch welches Zeichen soll ersetzt werden?", "ReplaceString")
+                            If temp4 <> "" Then
+                                insert("replaceString " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                            Else
+                                insert("replaceString " & temp & "|" & temp2 & "|" & temp3)
+                            End If
+                        End If
+                    End If
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
