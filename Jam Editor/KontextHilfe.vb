@@ -341,6 +341,51 @@
                         End If
                     End If
                 End If
+            Case "kSetRegValue"
+                Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu ändernde Eintrag befindet oder erstellt werden soll?", "SetRegValue")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der geändert oder erstellt werden soll?", "SetRegValue")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Welchen Wert soll in den Eintrag geschrieben werden?", "SetRegValue")
+                        If temp3 <> "" Then
+                            Dim temp4 As String = InputBox("Welchen Registry Typ soll der Eintrag besitzen? (Optional)" & vbCrLf & "Mögliche Eingaben sind: binary, string, dword, qword, expandstring, multistring", "SetRegValue")
+                            If temp4 <> "" Then
+                                insert("setRegValue " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                            Else
+                                insert("setRegValue " & temp & "|" & temp2 & "|" & temp3)
+                            End If
+                        End If
+                    End If
+                End If
+            Case "kGetRegValue"
+                Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu lesende Eintrag befindet?", "GetRegValue")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der gelesen werden soll?", "GetRegValue")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("In welche Variable soll der Wert gespeichert werden?" & vbCrLf & " (Ohne Angabe vom Zeichen $)", "GetRegValue")
+                        If temp3 <> "" Then
+                            insert("getRegValue " & temp & "|" & temp2 & "|" & temp3)
+                        End If
+                    End If
+                End If
+            Case "kCreateRegKey"
+                Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey der erstellt werden soll?", "CreateRegKey")
+                If temp <> "" Then
+                    insert("createRegKey " & temp)
+                End If
+            Case "kDelRegKey"
+                Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey?", "DelRegKey")
+                If temp <> "" Then
+                    insert("delRegKey " & temp)
+                End If
+            Case "kDelRegValue"
+                Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu löschende Eintrag befindet?", "DelRegValue")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der gelöscht werden soll?", "DelRegValue")
+                    If temp2 <> "" Then
+                        insert("getRegValue " & temp & "|" & temp2)
+                    End If
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)

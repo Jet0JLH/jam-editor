@@ -76,6 +76,15 @@ Partial Class Form1
         Me.TasksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kTaskKill = New System.Windows.Forms.ToolStripMenuItem()
         Me.kTaskClose = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kSubstring = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kReplaceString = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kSetRegValue = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kGetRegValue = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kCreateRegKey = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kDelRegKey = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kDelRegValue = New System.Windows.Forms.ToolStripMenuItem()
         Me.VariablenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ZeichenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.vZeilenumbruch = New System.Windows.Forms.ToolStripMenuItem()
@@ -85,9 +94,6 @@ Partial Class Form1
         Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.StringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kSubstring = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kReplaceString = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -183,7 +189,7 @@ Partial Class Form1
         '
         'BefehleToolStripMenuItem
         '
-        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem, Me.StringToolStripMenuItem})
+        Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem, Me.StringToolStripMenuItem, Me.RegistryToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
         Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
@@ -198,43 +204,43 @@ Partial Class Form1
         'kMessage
         '
         Me.kMessage.Name = "kMessage"
-        Me.kMessage.Size = New System.Drawing.Size(152, 22)
+        Me.kMessage.Size = New System.Drawing.Size(136, 22)
         Me.kMessage.Text = "message"
         '
         'kSleep
         '
         Me.kSleep.Name = "kSleep"
-        Me.kSleep.Size = New System.Drawing.Size(152, 22)
+        Me.kSleep.Size = New System.Drawing.Size(136, 22)
         Me.kSleep.Text = "sleep"
         '
         'kShell
         '
         Me.kShell.Name = "kShell"
-        Me.kShell.Size = New System.Drawing.Size(152, 22)
+        Me.kShell.Size = New System.Drawing.Size(136, 22)
         Me.kShell.Text = "shell"
         '
         'kStart
         '
         Me.kStart.Name = "kStart"
-        Me.kStart.Size = New System.Drawing.Size(152, 22)
+        Me.kStart.Size = New System.Drawing.Size(136, 22)
         Me.kStart.Text = "start"
         '
         'kStartWait
         '
         Me.kStartWait.Name = "kStartWait"
-        Me.kStartWait.Size = New System.Drawing.Size(152, 22)
+        Me.kStartWait.Size = New System.Drawing.Size(136, 22)
         Me.kStartWait.Text = "startwait"
         '
         'kKommentar
         '
         Me.kKommentar.Name = "kKommentar"
-        Me.kKommentar.Size = New System.Drawing.Size(152, 22)
+        Me.kKommentar.Size = New System.Drawing.Size(136, 22)
         Me.kKommentar.Text = "kommentar"
         '
         'kCalculate
         '
         Me.kCalculate.Name = "kCalculate"
-        Me.kCalculate.Size = New System.Drawing.Size(152, 22)
+        Me.kCalculate.Size = New System.Drawing.Size(136, 22)
         Me.kCalculate.Text = "calculate"
         '
         'ErscheinungsbildToolStripMenuItem
@@ -247,19 +253,19 @@ Partial Class Form1
         'kTitle
         '
         Me.kTitle.Name = "kTitle"
-        Me.kTitle.Size = New System.Drawing.Size(152, 22)
+        Me.kTitle.Size = New System.Drawing.Size(107, 22)
         Me.kTitle.Text = "title"
         '
         'kVisible
         '
         Me.kVisible.Name = "kVisible"
-        Me.kVisible.Size = New System.Drawing.Size(152, 22)
+        Me.kVisible.Size = New System.Drawing.Size(107, 22)
         Me.kVisible.Text = "visible"
         '
         'kLog
         '
         Me.kLog.Name = "kLog"
-        Me.kLog.Size = New System.Drawing.Size(152, 22)
+        Me.kLog.Size = New System.Drawing.Size(107, 22)
         Me.kLog.Text = "log"
         '
         'EntscheidungenToolStripMenuItem
@@ -416,14 +422,70 @@ Partial Class Form1
         'kTaskKill
         '
         Me.kTaskKill.Name = "kTaskKill"
-        Me.kTaskKill.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskKill.Size = New System.Drawing.Size(124, 22)
         Me.kTaskKill.Text = "taskKill"
         '
         'kTaskClose
         '
         Me.kTaskClose.Name = "kTaskClose"
-        Me.kTaskClose.Size = New System.Drawing.Size(152, 22)
+        Me.kTaskClose.Size = New System.Drawing.Size(124, 22)
         Me.kTaskClose.Text = "taskClose"
+        '
+        'StringToolStripMenuItem
+        '
+        Me.StringToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kSubstring, Me.kReplaceString})
+        Me.StringToolStripMenuItem.Name = "StringToolStripMenuItem"
+        Me.StringToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.StringToolStripMenuItem.Text = "String"
+        '
+        'kSubstring
+        '
+        Me.kSubstring.Name = "kSubstring"
+        Me.kSubstring.Size = New System.Drawing.Size(146, 22)
+        Me.kSubstring.Text = "Substring"
+        '
+        'kReplaceString
+        '
+        Me.kReplaceString.Name = "kReplaceString"
+        Me.kReplaceString.Size = New System.Drawing.Size(146, 22)
+        Me.kReplaceString.Text = "ReplaceString"
+        '
+        'RegistryToolStripMenuItem
+        '
+        Me.RegistryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kSetRegValue, Me.kGetRegValue, Me.kCreateRegKey, Me.kDelRegKey, Me.kDelRegValue})
+        Me.RegistryToolStripMenuItem.Name = "RegistryToolStripMenuItem"
+        Me.RegistryToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.RegistryToolStripMenuItem.Text = "Registry"
+        '
+        'kSetRegValue
+        '
+        Me.kSetRegValue.Name = "kSetRegValue"
+        Me.kSetRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kSetRegValue.Text = "setRegValue"
+        '
+        'kGetRegValue
+        '
+        Me.kGetRegValue.Name = "kGetRegValue"
+        Me.kGetRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kGetRegValue.Text = "getRegValue"
+        '
+        'kCreateRegKey
+        '
+        Me.kCreateRegKey.Name = "kCreateRegKey"
+        Me.kCreateRegKey.Size = New System.Drawing.Size(152, 22)
+        Me.kCreateRegKey.Text = "createRegKey"
+        '
+        'kDelRegKey
+        '
+        Me.kDelRegKey.Name = "kDelRegKey"
+        Me.kDelRegKey.Size = New System.Drawing.Size(152, 22)
+        Me.kDelRegKey.Text = "delRegKey"
+        '
+        'kDelRegValue
+        '
+        Me.kDelRegValue.Name = "kDelRegValue"
+        Me.kDelRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kDelRegValue.Text = "delRegValue"
         '
         'VariablenToolStripMenuItem
         '
@@ -436,7 +498,7 @@ Partial Class Form1
         '
         Me.ZeichenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vZeilenumbruch, Me.v1, Me.v2, Me.v3})
         Me.ZeichenToolStripMenuItem.Name = "ZeichenToolStripMenuItem"
-        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeichenToolStripMenuItem.Text = "Sonderzeichen"
         '
         'vZeilenumbruch
@@ -472,7 +534,7 @@ Partial Class Form1
         'kSet
         '
         Me.kSet.Name = "kSet"
-        Me.kSet.Size = New System.Drawing.Size(152, 22)
+        Me.kSet.Size = New System.Drawing.Size(151, 22)
         Me.kSet.Text = "set"
         '
         'OpenFileDialog1
@@ -482,25 +544,6 @@ Partial Class Form1
         'SaveFileDialog1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
-        '
-        'StringToolStripMenuItem
-        '
-        Me.StringToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kSubstring, Me.kReplaceString})
-        Me.StringToolStripMenuItem.Name = "StringToolStripMenuItem"
-        Me.StringToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.StringToolStripMenuItem.Text = "String"
-        '
-        'kSubstring
-        '
-        Me.kSubstring.Name = "kSubstring"
-        Me.kSubstring.Size = New System.Drawing.Size(152, 22)
-        Me.kSubstring.Text = "Substring"
-        '
-        'kReplaceString
-        '
-        Me.kReplaceString.Name = "kReplaceString"
-        Me.kReplaceString.Size = New System.Drawing.Size(152, 22)
-        Me.kReplaceString.Text = "ReplaceString"
         '
         'Form1
         '
@@ -585,5 +628,11 @@ Partial Class Form1
     Friend WithEvents StringToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kSubstring As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kReplaceString As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RegistryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kSetRegValue As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kGetRegValue As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kCreateRegKey As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kDelRegKey As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kDelRegValue As System.Windows.Forms.ToolStripMenuItem
 
 End Class
