@@ -94,6 +94,7 @@ Partial Class Form1
         Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -180,18 +181,19 @@ Partial Class Form1
         Me.RichTextBox1.Size = New System.Drawing.Size(852, 473)
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = ""
+        Me.RichTextBox1.WordWrap = False
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
         '
         'BefehleToolStripMenuItem
         '
         Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem, Me.StringToolStripMenuItem, Me.RegistryToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -460,38 +462,38 @@ Partial Class Form1
         'kSetRegValue
         '
         Me.kSetRegValue.Name = "kSetRegValue"
-        Me.kSetRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kSetRegValue.Size = New System.Drawing.Size(145, 22)
         Me.kSetRegValue.Text = "setRegValue"
         '
         'kGetRegValue
         '
         Me.kGetRegValue.Name = "kGetRegValue"
-        Me.kGetRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kGetRegValue.Size = New System.Drawing.Size(145, 22)
         Me.kGetRegValue.Text = "getRegValue"
         '
         'kCreateRegKey
         '
         Me.kCreateRegKey.Name = "kCreateRegKey"
-        Me.kCreateRegKey.Size = New System.Drawing.Size(152, 22)
+        Me.kCreateRegKey.Size = New System.Drawing.Size(145, 22)
         Me.kCreateRegKey.Text = "createRegKey"
         '
         'kDelRegKey
         '
         Me.kDelRegKey.Name = "kDelRegKey"
-        Me.kDelRegKey.Size = New System.Drawing.Size(152, 22)
+        Me.kDelRegKey.Size = New System.Drawing.Size(145, 22)
         Me.kDelRegKey.Text = "delRegKey"
         '
         'kDelRegValue
         '
         Me.kDelRegValue.Name = "kDelRegValue"
-        Me.kDelRegValue.Size = New System.Drawing.Size(152, 22)
+        Me.kDelRegValue.Size = New System.Drawing.Size(145, 22)
         Me.kDelRegValue.Text = "delRegValue"
         '
         'VariablenToolStripMenuItem
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.kSet})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
@@ -545,6 +547,18 @@ Partial Class Form1
         '
         Me.SaveFileDialog1.Filter = "Jam Skript|*.jam"
         '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.RichTextBox2.DetectUrls = False
+        Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox2.Location = New System.Drawing.Point(0, 0)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.Size = New System.Drawing.Size(852, 519)
+        Me.RichTextBox2.TabIndex = 3
+        Me.RichTextBox2.Text = ""
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -553,6 +567,7 @@ Partial Class Form1
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.RichTextBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -634,5 +649,6 @@ Partial Class Form1
     Friend WithEvents kCreateRegKey As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kDelRegKey As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kDelRegValue As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
 
 End Class

@@ -38,24 +38,25 @@
 
     'Syntax Highlightning
     Private Sub RichTextBox1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RichTextBox1.TextChanged
+        RichTextBox2.Rtf = RichTextBox1.Rtf
         Dim tempSelection As Integer = RichTextBox1.SelectionStart
-        RichTextBox1.SelectAll()
-        RichTextBox1.SelectionColor = Color.Black
+        RichTextBox2.SelectAll()
+        RichTextBox2.SelectionColor = Color.Black
         'RichTextBox1.SelectionFont = New Font(DefaultFont.FontFamily, 12, FontStyle.Regular)
 
         Dim tempWord As String = ""
         Dim startIndex As Integer = 0
         Dim semicolon As Boolean = True
-        For i As Integer = 0 To RichTextBox1.Text.Length - 1
-            Select Case RichTextBox1.Text(i)
+        For i As Integer = 0 To RichTextBox2.Text.Length - 1
+            Select Case RichTextBox2.Text(i)
                 Case ";"
                     Dim tempEditWord As String = tempWord.ToLower.Replace(Chr(13), "").Replace(Chr(10), "").ToLower
                     If tempEditWord = "exit" And semicolon = True Then
-                        RichTextBox1.Select(startIndex, tempWord.Length)
-                        RichTextBox1.SelectionColor = Color.Red
+                        RichTextBox2.Select(startIndex, tempWord.Length)
+                        RichTextBox2.SelectionColor = Color.Red
                     ElseIf tempEditWord.StartsWith(":") And semicolon = True Then
-                        RichTextBox1.Select(startIndex, tempWord.Length)
-                        RichTextBox1.SelectionColor = Color.Red
+                        RichTextBox2.Select(startIndex, tempWord.Length)
+                        RichTextBox2.SelectionColor = Color.Red
                     End If
                     startIndex = i + 1
                     semicolon = True
@@ -64,24 +65,26 @@
                     If semicolon = True Then
                         Select Case tempWord.Replace(Chr(13), "").Replace(Chr(10), "").ToLower
                             Case "message", "sleep", "wait", "deldir", "copydir", "delfile", "copyfile", "movedir", "movefile", "start", "startwait", "goto", "ifdirexist", "iffileexist", "shell", "writefile", "writefileappend", "mkdir", "taskkill", "taskclose", "iftaskexist", "gosub", "wget", "readfile", "ifstringequal", "ifstringcontain", "calculate", "set", "substring", "replacestring", "setregvalue", "getregvalue", "createregkey", "delregkey", "delregvalue"
-                                RichTextBox1.Select(startIndex, tempWord.Length)
-                                RichTextBox1.SelectionColor = Color.DarkGreen
+                                RichTextBox2.Select(startIndex, tempWord.Length)
+                                RichTextBox2.SelectionColor = Color.DarkGreen
                                 'RichTextBox1.SelectionFont = New Font(DefaultFont.FontFamily, 12, FontStyle.Bold)
                             Case "title", "visible", "log"
-                                RichTextBox1.Select(startIndex, tempWord.Length)
-                                RichTextBox1.SelectionColor = Color.CornflowerBlue
+                                RichTextBox2.Select(startIndex, tempWord.Length)
+                                RichTextBox2.SelectionColor = Color.CornflowerBlue
                         End Select
                     End If
                     semicolon = False
                     tempWord = ""
                 Case "|", ">"
-                    RichTextBox1.Select(i, 1)
-                    RichTextBox1.SelectionColor = Color.DarkRed
+                    RichTextBox2.Select(i, 1)
+                    RichTextBox2.SelectionColor = Color.DarkRed
                 Case Else
-                    tempWord &= RichTextBox1.Text(i)
+                    tempWord &= RichTextBox2.Text(i)
             End Select
         Next
 
+        RichTextBox2.Select(tempSelection, 0)
+        RichTextBox1.Rtf = RichTextBox2.Rtf
         RichTextBox1.Select(tempSelection, 0)
     End Sub
 
