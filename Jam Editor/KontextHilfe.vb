@@ -344,7 +344,7 @@
             Case "kSetRegValue"
                 Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu ändernde Eintrag befindet oder erstellt werden soll?", "SetRegValue")
                 If temp <> "" Then
-                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der geändert oder erstellt werden soll?", "SetRegValue")
+                    Dim temp2 As String = InputBox("Wie lautet der Name des Eintrags der geändert oder erstellt werden soll?", "SetRegValue")
                     If temp2 <> "" Then
                         Dim temp3 As String = InputBox("Welchen Wert soll in den Eintrag geschrieben werden?", "SetRegValue")
                         If temp3 <> "" Then
@@ -360,7 +360,7 @@
             Case "kGetRegValue"
                 Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu lesende Eintrag befindet?", "GetRegValue")
                 If temp <> "" Then
-                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der gelesen werden soll?", "GetRegValue")
+                    Dim temp2 As String = InputBox("Wie lautet der Name des Eintrags der gelesen werden soll?", "GetRegValue")
                     If temp2 <> "" Then
                         Dim temp3 As String = InputBox("In welche Variable soll der Wert gespeichert werden?" & vbCrLf & " (Ohne Angabe vom Zeichen $)", "GetRegValue")
                         If temp3 <> "" Then
@@ -381,9 +381,9 @@
             Case "kDelRegValue"
                 Dim temp As String = InputBox("Wie lautet der Pfad des Registrykey in dem sich der zu löschende Eintrag befindet?", "DelRegValue")
                 If temp <> "" Then
-                    Dim temp2 As String = InputBox("Wie Lautet der Name des Eintrags der gelöscht werden soll?", "DelRegValue")
+                    Dim temp2 As String = InputBox("Wie lautet der Name des Eintrags der gelöscht werden soll?", "DelRegValue")
                     If temp2 <> "" Then
-                        insert("getRegValue " & temp & "|" & temp2)
+                        insert("delRegValue " & temp & "|" & temp2)
                     End If
                 End If
         End Select
