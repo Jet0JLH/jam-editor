@@ -95,6 +95,7 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.kInclude = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -187,13 +188,13 @@ Partial Class Form1
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BefehleToolStripMenuItem, Me.VariablenToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
         '
         'BefehleToolStripMenuItem
         '
         Me.BefehleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StandardBefehleToolStripMenuItem, Me.ErscheinungsbildToolStripMenuItem, Me.EntscheidungenToolStripMenuItem, Me.DateiUndOrdnerToolStripMenuItem, Me.TasksToolStripMenuItem, Me.StringToolStripMenuItem, Me.RegistryToolStripMenuItem})
         Me.BefehleToolStripMenuItem.Name = "BefehleToolStripMenuItem"
-        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BefehleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BefehleToolStripMenuItem.Text = "Befehle"
         '
         'StandardBefehleToolStripMenuItem
@@ -247,7 +248,7 @@ Partial Class Form1
         '
         'ErscheinungsbildToolStripMenuItem
         '
-        Me.ErscheinungsbildToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTitle, Me.kVisible, Me.kLog})
+        Me.ErscheinungsbildToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTitle, Me.kVisible, Me.kLog, Me.kInclude})
         Me.ErscheinungsbildToolStripMenuItem.Name = "ErscheinungsbildToolStripMenuItem"
         Me.ErscheinungsbildToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.ErscheinungsbildToolStripMenuItem.Text = "Sonderfunktionen"
@@ -255,19 +256,19 @@ Partial Class Form1
         'kTitle
         '
         Me.kTitle.Name = "kTitle"
-        Me.kTitle.Size = New System.Drawing.Size(107, 22)
+        Me.kTitle.Size = New System.Drawing.Size(152, 22)
         Me.kTitle.Text = "title"
         '
         'kVisible
         '
         Me.kVisible.Name = "kVisible"
-        Me.kVisible.Size = New System.Drawing.Size(107, 22)
+        Me.kVisible.Size = New System.Drawing.Size(152, 22)
         Me.kVisible.Text = "visible"
         '
         'kLog
         '
         Me.kLog.Name = "kLog"
-        Me.kLog.Size = New System.Drawing.Size(107, 22)
+        Me.kLog.Size = New System.Drawing.Size(152, 22)
         Me.kLog.Text = "log"
         '
         'EntscheidungenToolStripMenuItem
@@ -493,7 +494,7 @@ Partial Class Form1
         '
         Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.kSet})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
-        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
         '
         'ZeichenToolStripMenuItem
@@ -558,6 +559,12 @@ Partial Class Form1
         Me.RichTextBox2.Size = New System.Drawing.Size(852, 519)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = ""
+        '
+        'kInclude
+        '
+        Me.kInclude.Name = "kInclude"
+        Me.kInclude.Size = New System.Drawing.Size(152, 22)
+        Me.kInclude.Text = "include"
         '
         'Form1
         '
@@ -650,5 +657,6 @@ Partial Class Form1
     Friend WithEvents kDelRegKey As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents kDelRegValue As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents kInclude As System.Windows.Forms.ToolStripMenuItem
 
 End Class

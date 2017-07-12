@@ -386,6 +386,11 @@
                         insert("delRegValue " & temp & "|" & temp2)
                     End If
                 End If
+            Case "kInclude"
+                Dim temp As String = InputBox("Welche Datei soll Jam Includen?", "Include")
+                If temp <> "" Then
+                    insert("include " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
