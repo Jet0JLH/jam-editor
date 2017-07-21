@@ -1,0 +1,6 @@
+<version>
+	<url>https://github.com/Jet0JLH/jam-editor/releases/download/v1.6.0/Jam-Editor.exe</url>
+	<major>1</major>
+	<minor>6</minor>
+	<build>0</build>
+</version>
