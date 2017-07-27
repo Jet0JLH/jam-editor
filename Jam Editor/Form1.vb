@@ -180,9 +180,9 @@ Public Class Form1
     Sub getFileSize()
         While True
             If RichTextBox1.Lines.Count = 0 Then
-                ToolStripStatusLabel3.Text = "Größe " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 3)
+                ToolStripStatusLabel3.Text = "Größe: " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 3)
             Else
-                ToolStripStatusLabel3.Text = "Größe " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 2)
+                ToolStripStatusLabel3.Text = "Größe: " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 2)
             End If
             If formIsClosing = True Then Exit While
             Threading.Thread.Sleep(2000)
