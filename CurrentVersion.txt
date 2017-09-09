@@ -1,6 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <version>
-	<url>https://github.com/Jet0JLH/jam-editor/releases/download/v1.6.0/Jam-Editor.exe</url>
-	<major>1</major>
-	<minor>6</minor>
-	<build>0</build>
+	<editor>
+		<url>https://github.com/Jet0JLH/jam-editor/releases/download/v1.6.0/Jam-Editor.exe</url>
+		<major>1</major>
+		<minor>6</minor>
+		<build>0</build>
+	</editor>
+	<re>
+		<url>https://github.com/Jet0JLH/jam-re/releases/download/v1.6.0/jam-re.exe</url>
+		<major>1</major>
+		<minor>6</minor>
+		<build>0</build>
+	</re>
 </version>

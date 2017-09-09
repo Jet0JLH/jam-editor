@@ -391,6 +391,21 @@
                 If temp <> "" Then
                     insert("include " & temp)
                 End If
+            Case "kIfPingSuccessfull"
+                Dim temp As String = InputBox("Wie lautet die zu pingende Adresse?", "IfPingSuccessfull")
+                If temp <> "" Then
+                    Dim temp2 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn die Adresse erreichbar ist?", "IfPingSuccessfull")
+                    If temp2 <> "" Then
+                        Dim temp3 As String = InputBox("Zu welcher Sprungmarke soll gesprungen werden wenn die Adresse nicht erreichbar ist?", "IfPingSuccessfull")
+                        If temp3 <> "" Then
+                            insert("IfPingSuccessfull " & temp & "|" & temp2 & "|" & temp3)
+                        Else
+                            insert("IfPingSuccessfull " & temp & "|" & temp2)
+                        End If
+                    End If
+                End If
+            Case "kCls"
+                insert("cls")
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
@@ -410,6 +425,28 @@
                 insert("%_gd%", False)
             Case "v3"
                 insert("%_prozent%", False)
+            Case "vJahr"
+                insert("%year%", False)
+            Case "vMonat"
+                insert("%month%", False)
+            Case "vMonat0"
+                insert("%MONTH%", False)
+            Case "vTag"
+                insert("%day%", False)
+            Case "vTag0"
+                insert("%DAY%", False)
+            Case "vStunde"
+                insert("%hour%", False)
+            Case "vStunde0"
+                insert("%HOUR%", False)
+            Case "vMinute"
+                insert("%minute%", False)
+            Case "vMinute0"
+                insert("%MINUTE%", False)
+            Case "vSekunde"
+                insert("%second%", False)
+            Case "vSekunde0"
+                insert("%SECOND%", False)
         End Select
     End Sub
 End Module

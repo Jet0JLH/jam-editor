@@ -54,6 +54,9 @@
                     If tempEditWord = "exit" And semicolon = True Then
                         RichTextBox2.Select(startIndex, tempWord.Length)
                         RichTextBox2.SelectionColor = Color.Red
+                    ElseIf (tempEditWord = "cls" Or tempEditWord = "clear") And semicolon = True Then
+                        RichTextBox2.Select(startIndex, tempWord.Length)
+                        RichTextBox2.SelectionColor = Color.Orange
                     ElseIf tempEditWord.StartsWith(":") And semicolon = True Then
                         RichTextBox2.Select(startIndex, tempWord.Length)
                         RichTextBox2.SelectionColor = Color.Red
@@ -64,7 +67,7 @@
                 Case " "
                     If semicolon = True Then
                         Select Case tempWord.Replace(Chr(13), "").Replace(Chr(10), "").ToLower
-                            Case "message", "sleep", "wait", "deldir", "copydir", "delfile", "copyfile", "movedir", "movefile", "start", "startwait", "goto", "ifdirexist", "iffileexist", "shell", "writefile", "writefileappend", "mkdir", "taskkill", "taskclose", "iftaskexist", "gosub", "wget", "readfile", "ifstringequal", "ifstringcontain", "calculate", "set", "substring", "replacestring", "setregvalue", "getregvalue", "createregkey", "delregkey", "delregvalue"
+                            Case "message", "sleep", "wait", "deldir", "copydir", "delfile", "copyfile", "movedir", "movefile", "start", "startwait", "goto", "ifdirexist", "iffileexist", "shell", "writefile", "writefileappend", "mkdir", "taskkill", "taskclose", "iftaskexist", "gosub", "wget", "readfile", "ifstringequal", "ifstringcontain", "calculate", "set", "substring", "replacestring", "setregvalue", "getregvalue", "createregkey", "delregkey", "delregvalue", "ifpingsuccessfull"
                                 RichTextBox2.Select(startIndex, tempWord.Length)
                                 RichTextBox2.SelectionColor = Color.DarkGreen
                                 'RichTextBox1.SelectionFont = New Font(DefaultFont.FontFamily, 12, FontStyle.Bold)
@@ -126,15 +129,53 @@
         End Try
     End Sub
 
-    Private Sub HelpMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kMessage.Click, kSleep.Click, kShell.Click, kStart.Click, kStartWait.Click, kTitle.Click, kVisible.Click, kLable.Click, kGoto.Click, kExit.Click, kIfDirExist.Click, kIfFileExist.Click, kDelDir.Click, kDelFile.Click, kCopyDir.Click, kCopyFile.Click, kMoveDir.Click, kMoveFile.Click, kWriteFile.Click, kWriteFileAppend.Click, kMkDir.Click, kTaskKill.Click, kTaskClose.Click, kIfTaskExist.Click, kKommentar.Click, kGoSub.Click, kWget.Click, kLog.Click, kSet.Click, kReadFile.Click, kIfStringEqual.Click, kIfStringContain.Click, kCalculate.Click, kSubstring.Click, kReplaceString.Click, kSetRegValue.Click, kGetRegValue.Click, kCreateRegKey.Click, kDelRegKey.Click, kDelRegValue.Click, kInclude.Click
+    Private Sub HelpMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kMessage.Click, kSleep.Click, kShell.Click, kStart.Click, kStartWait.Click, kTitle.Click, kVisible.Click, kLable.Click, kGoto.Click, kExit.Click, kIfDirExist.Click, kIfFileExist.Click, kDelDir.Click, kDelFile.Click, kCopyDir.Click, kCopyFile.Click, kMoveDir.Click, kMoveFile.Click, kWriteFile.Click, kWriteFileAppend.Click, kMkDir.Click, kTaskKill.Click, kTaskClose.Click, kIfTaskExist.Click, kKommentar.Click, kGoSub.Click, kWget.Click, kLog.Click, kSet.Click, kReadFile.Click, kIfStringEqual.Click, kIfStringContain.Click, kCalculate.Click, kSubstring.Click, kReplaceString.Click, kSetRegValue.Click, kGetRegValue.Click, kCreateRegKey.Click, kDelRegKey.Click, kDelRegValue.Click, kInclude.Click, kIfPingSuccessfull.Click, kCls.Click
         KontextHilfe.main(sender)
     End Sub
 
-    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click
+    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click, vJahr.Click, vMonat.Click, vMonat0.Click, vTag.Click, vTag0.Click, vStunde.Click, vStunde0.Click, vMinute.Click, vMinute0.Click, vSekunde.Click, vSekunde0.Click
         KontextHilfe.variablen(sender)
     End Sub
 
     Private Sub InfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InfoToolStripMenuItem.Click
         MsgBox("Jam Editor Version: " & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub AufUpdatesPrüfenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AufUpdatesPrüfenToolStripMenuItem.Click
+        Try
+            Dim tempFile As String = My.Computer.FileSystem.GetTempFileName()
+            My.Computer.FileSystem.DeleteFile(tempFile)
+            My.Computer.Network.DownloadFile("https://raw.githubusercontent.com/Jet0JLH/jam-editor/master/CurrentVersion.txt", tempFile)
+            Dim versionXML As New XDocument
+            versionXML = XDocument.Load(tempFile)
+            My.Computer.FileSystem.DeleteFile(tempFile)
+            Dim editormajor As Integer = versionXML.<version>.<editor>.<major>.Value
+            Dim editorminor As Integer = versionXML.<version>.<editor>.<minor>.Value
+            Dim editorbuild As Integer = versionXML.<version>.<editor>.<build>.Value
+            Dim remajor As Integer = versionXML.<version>.<editor>.<major>.Value
+            Dim reminor As Integer = versionXML.<version>.<editor>.<minor>.Value
+            Dim rebuild As Integer = versionXML.<version>.<editor>.<build>.Value
+            If editormajor > My.Application.Info.Version.Major Or editorminor > My.Application.Info.Version.Minor Or My.Application.Info.Version.Build Then
+                Dim saveDialog As New SaveFileDialog()
+                Select Case MsgBox("Eine neue Version vom Jam-Editor ist verfügbar." & vbCrLf & _
+                                   "Momentan wird die Version " & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & " verwendet." & _
+                                   vbCrLf & "Version " & editormajor & "." & editorminor & "." & editorbuild & " steht zum Download verfügbar." & vbCrLf & _
+                                   "Soll diese heruntergeladen werden?", MsgBoxStyle.YesNoCancel, "Eine neue Version ist verfügbar")
+                    Case MsgBoxResult.Yes
+                        Select Case MsgBox("Version " & remajor & "." & reminor & "." & rebuild & " des Jam-re steht ebenso zum Download bereit." & vbCrLf & "Soll dieses auch heruntergeladen werden?", MsgBoxStyle.YesNo, "Update von Jam-re?")
+                            Case MsgBoxResult.Yes
+
+                            Case MsgBoxResult.No
+
+                        End Select
+                    Case MsgBoxResult.No
+
+                    Case MsgBoxResult.Cancel
+                        Exit Sub
+                End Select
+            End If
+        Catch ex As Exception
+            MsgBox("Ein Fehler ist aufgetreten!" & vbCrLf & vbCrLf & ex.ToString, MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class
