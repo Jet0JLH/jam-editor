@@ -1,5 +1,8 @@
-﻿Public Class Form1
+﻿Imports System.Text
+Public Class Form1
     Dim saveFile As String = ""
+    Dim getFileSizeThread As Threading.Thread
+    Dim formIsClosing As Boolean = False
     Private Sub SchließenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SchließenToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -34,6 +37,21 @@
         While RichTextBox1.CanUndo = True
             RichTextBox1.ClearUndo()
         End While
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.formClosing
+        formIsClosing = True
+    End Sub
+
+    Private Sub RichTextBox1_KeyUp() Handles RichTextBox1.KeyUp, Me.Shown, RichTextBox1.MouseUp, OpenFileDialog1.FileOk
+        'Statusbar
+        ToolStripStatusLabel1.Text = "Zeile: " & RichTextBox1.GetLineFromCharIndex(RichTextBox1.SelectionStart) + 1 & " von "
+        If RichTextBox1.Lines.Count() = 0 Then
+            ToolStripStatusLabel1.Text &= 1
+        Else
+            ToolStripStatusLabel1.Text &= RichTextBox1.Lines.Count()
+        End If
+        ToolStripStatusLabel2.Text = "Zeichen: " & RichTextBox1.SelectionStart & " von " & RichTextBox1.Text.Count
     End Sub
 
     'Syntax Highlightning
@@ -89,6 +107,7 @@
         RichTextBox2.Select(tempSelection, 0)
         RichTextBox1.Rtf = RichTextBox2.Rtf
         RichTextBox1.Select(tempSelection, 0)
+
     End Sub
 
     Private Sub Form1_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
@@ -177,5 +196,42 @@
         Catch ex As Exception
             MsgBox("Ein Fehler ist aufgetreten!" & vbCrLf & vbCrLf & ex.ToString, MsgBoxStyle.Critical)
         End Try
+    End Sub
+    Function humanReadable(value As Double) As String
+        Dim count As Byte = 0
+        While value > 1024
+            count += 1
+            value = value / 1024
+        End While
+        Select Case count
+            Case 0
+                Return Math.Round(value, 2) & " Byte"
+            Case 1
+                Return Math.Round(value, 2) & " KB"
+            Case 2
+                Return Math.Round(value, 2) & " MB"
+            Case 3
+                Return Math.Round(value, 2) & " GB"
+            Case 4
+                Return Math.Round(value, 2) & " TB"
+            Case Else
+                Return Math.Round(value, 2) & " PB"
+        End Select
+    End Function
+    Sub getFileSize()
+        While True
+            If RichTextBox1.Lines.Count = 0 Then
+                ToolStripStatusLabel3.Text = "Größe: " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 3)
+            Else
+                ToolStripStatusLabel3.Text = "Größe: " & humanReadable(Encoding.UTF8.GetBytes(RichTextBox1.Text).Count + RichTextBox1.Lines.Count + 2)
+            End If
+            If formIsClosing = True Then Exit While
+            Threading.Thread.Sleep(2000)
+        End While
+    End Sub
+    Private Sub Form1_Shown() Handles MyBase.Shown
+        CheckForIllegalCrossThreadCalls = False
+        getFileSizeThread = New Threading.Thread(AddressOf getFileSize)
+        getFileSizeThread.Start()
     End Sub
 End Class
