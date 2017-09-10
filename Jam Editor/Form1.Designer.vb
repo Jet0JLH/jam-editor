@@ -99,7 +99,6 @@ Partial Class Form1
         Me.v1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.v3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
         Me.ZeitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.vJahr = New System.Windows.Forms.ToolStripMenuItem()
         Me.vMonat = New System.Windows.Forms.ToolStripMenuItem()
@@ -112,9 +111,13 @@ Partial Class Form1
         Me.vStunde0 = New System.Windows.Forms.ToolStripMenuItem()
         Me.vMinute0 = New System.Windows.Forms.ToolStripMenuItem()
         Me.vSekunde0 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.kIf = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -337,7 +340,7 @@ Partial Class Form1
         '
         'EntscheidungenToolStripMenuItem
         '
-        Me.EntscheidungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kLable, Me.kGoto, Me.kGoSub, Me.kIfDirExist, Me.kIfFileExist, Me.kIfTaskExist, Me.kIfStringEqual, Me.kIfStringContain, Me.kIfPingSuccessfull, Me.kExit})
+        Me.EntscheidungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kLable, Me.kGoto, Me.kGoSub, Me.ToolStripSeparator5, Me.kIf, Me.kIfDirExist, Me.kIfFileExist, Me.kIfTaskExist, Me.kIfStringEqual, Me.kIfStringContain, Me.kIfPingSuccessfull, Me.ToolStripSeparator6, Me.kExit})
         Me.EntscheidungenToolStripMenuItem.Name = "EntscheidungenToolStripMenuItem"
         Me.EntscheidungenToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.EntscheidungenToolStripMenuItem.Text = "Entscheidungen"
@@ -383,12 +386,14 @@ Partial Class Form1
         Me.kIfStringEqual.Name = "kIfStringEqual"
         Me.kIfStringEqual.Size = New System.Drawing.Size(163, 22)
         Me.kIfStringEqual.Text = "ifStringEqual"
+        Me.kIfStringEqual.Visible = False
         '
         'kIfStringContain
         '
         Me.kIfStringContain.Name = "kIfStringContain"
         Me.kIfStringContain.Size = New System.Drawing.Size(163, 22)
         Me.kIfStringContain.Text = "ifStringContain"
+        Me.kIfStringContain.Visible = False
         '
         'kIfPingSuccessfull
         '
@@ -604,12 +609,6 @@ Partial Class Form1
         Me.v3.Text = "%"
         Me.v3.Visible = False
         '
-        'kSet
-        '
-        Me.kSet.Name = "kSet"
-        Me.kSet.Size = New System.Drawing.Size(152, 22)
-        Me.kSet.Text = "set"
-        '
         'ZeitToolStripMenuItem
         '
         Me.ZeitToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vJahr, Me.vMonat, Me.vTag, Me.vStunde, Me.vMinute, Me.vSekunde, Me.vMonat0, Me.vTag0, Me.vStunde0, Me.vMinute0, Me.vSekunde0})
@@ -683,6 +682,12 @@ Partial Class Form1
         Me.vSekunde0.Size = New System.Drawing.Size(220, 22)
         Me.vSekunde0.Text = "Sekunde mit führender Null"
         '
+        'kSet
+        '
+        Me.kSet.Name = "kSet"
+        Me.kSet.Size = New System.Drawing.Size(152, 22)
+        Me.kSet.Text = "set"
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Jam Skript|*.jam"
@@ -702,6 +707,22 @@ Partial Class Form1
         Me.RichTextBox2.Size = New System.Drawing.Size(852, 519)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = ""
+        '
+        'kIf
+        '
+        Me.kIf.Name = "kIf"
+        Me.kIf.Size = New System.Drawing.Size(163, 22)
+        Me.kIf.Text = "If"
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(160, 6)
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(160, 6)
         '
         'Form1
         '
@@ -816,5 +837,8 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents kIf As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
 
 End Class

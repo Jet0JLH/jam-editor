@@ -147,8 +147,10 @@ Partial Class KshellForm
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "KshellForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Shell"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -406,6 +406,19 @@
                 End If
             Case "kCls"
                 insert("cls")
+            Case "kIf"
+                IfWindow.ShowDialog()
+                If IfWindow.abgebrochen = False Then
+                    Dim buildString As String = "if "
+                    If IfWindow.ComboBox2.SelectedIndex = 1 Then
+                        buildString &= "casesensitive:true|"
+                    End If
+                    buildString &= IfWindow.TextBox1.Text & "|" & IfWindow.getOperator & "|" & IfWindow.TextBox2.Text & "|" & IfWindow.TextBox3.Text
+                    If IfWindow.TextBox4.Text <> "" Then
+                        buildString &= "|" & IfWindow.TextBox4.Text
+                    End If
+                    insert(buildString)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)

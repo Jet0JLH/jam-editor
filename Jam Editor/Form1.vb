@@ -85,7 +85,7 @@ Public Class Form1
                 Case " "
                     If semicolon = True Then
                         Select Case tempWord.Replace(Chr(13), "").Replace(Chr(10), "").ToLower
-                            Case "message", "sleep", "wait", "deldir", "copydir", "delfile", "copyfile", "movedir", "movefile", "start", "startwait", "goto", "ifdirexist", "iffileexist", "shell", "writefile", "writefileappend", "mkdir", "taskkill", "taskclose", "iftaskexist", "gosub", "wget", "readfile", "ifstringequal", "ifstringcontain", "calculate", "set", "substring", "replacestring", "setregvalue", "getregvalue", "createregkey", "delregkey", "delregvalue", "ifpingsuccessfull"
+                            Case "message", "sleep", "wait", "deldir", "copydir", "delfile", "copyfile", "movedir", "movefile", "start", "startwait", "goto", "ifdirexist", "iffileexist", "shell", "writefile", "writefileappend", "mkdir", "taskkill", "taskclose", "iftaskexist", "gosub", "wget", "readfile", "ifstringequal", "ifstringcontain", "calculate", "set", "substring", "replacestring", "setregvalue", "getregvalue", "createregkey", "delregkey", "delregvalue", "ifpingsuccessfull", "if"
                                 RichTextBox2.Select(startIndex, tempWord.Length)
                                 RichTextBox2.SelectionColor = Color.DarkGreen
                                 'RichTextBox1.SelectionFont = New Font(DefaultFont.FontFamily, 12, FontStyle.Bold)
@@ -148,7 +148,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub HelpMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kMessage.Click, kSleep.Click, kShell.Click, kStart.Click, kStartWait.Click, kTitle.Click, kVisible.Click, kLable.Click, kGoto.Click, kExit.Click, kIfDirExist.Click, kIfFileExist.Click, kDelDir.Click, kDelFile.Click, kCopyDir.Click, kCopyFile.Click, kMoveDir.Click, kMoveFile.Click, kWriteFile.Click, kWriteFileAppend.Click, kMkDir.Click, kTaskKill.Click, kTaskClose.Click, kIfTaskExist.Click, kKommentar.Click, kGoSub.Click, kWget.Click, kLog.Click, kSet.Click, kReadFile.Click, kIfStringEqual.Click, kIfStringContain.Click, kCalculate.Click, kSubstring.Click, kReplaceString.Click, kSetRegValue.Click, kGetRegValue.Click, kCreateRegKey.Click, kDelRegKey.Click, kDelRegValue.Click, kInclude.Click, kIfPingSuccessfull.Click, kCls.Click
+    Private Sub HelpMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kMessage.Click, kSleep.Click, kShell.Click, kStart.Click, kStartWait.Click, kTitle.Click, kVisible.Click, kLable.Click, kGoto.Click, kExit.Click, kIfDirExist.Click, kIfFileExist.Click, kDelDir.Click, kDelFile.Click, kCopyDir.Click, kCopyFile.Click, kMoveDir.Click, kMoveFile.Click, kWriteFile.Click, kWriteFileAppend.Click, kMkDir.Click, kTaskKill.Click, kTaskClose.Click, kIfTaskExist.Click, kKommentar.Click, kGoSub.Click, kWget.Click, kLog.Click, kSet.Click, kReadFile.Click, kIfStringEqual.Click, kIfStringContain.Click, kCalculate.Click, kSubstring.Click, kReplaceString.Click, kSetRegValue.Click, kGetRegValue.Click, kCreateRegKey.Click, kDelRegKey.Click, kDelRegValue.Click, kInclude.Click, kIfPingSuccessfull.Click, kCls.Click, kIf.Click
         KontextHilfe.main(sender)
     End Sub
 
