@@ -46,14 +46,14 @@
                                         Case 0
                                             insert("shell winstyle:minimized|wait:true|" & KshellForm.TextBox1.Text)
                                         Case 1
-                                            insert("shell winstyle:minimized|focus:false" & KshellForm.TextBox1.Text)
+                                            insert("shell winstyle:minimized|wait:true|focus:false|" & KshellForm.TextBox1.Text)
                                     End Select
                                 Case 1
                                     Select Case KshellForm.ComboBox2.SelectedIndex
                                         Case 0
-                                            insert("shell winstyle:minimized|wait:true|" & KshellForm.TextBox1.Text)
+                                            insert("shell winstyle:minimized|" & KshellForm.TextBox1.Text)
                                         Case 1
-                                            insert("shell winstyle:minimized|focus:false" & KshellForm.TextBox1.Text)
+                                            insert("shell winstyle:minimized|focus:false|" & KshellForm.TextBox1.Text)
                                     End Select
                             End Select
                         Case 3
