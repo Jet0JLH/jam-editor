@@ -460,6 +460,42 @@
                 insert("%second%", False)
             Case "vSekunde0"
                 insert("%0second%", False)
+            Case "vDesktop"
+                insert("%userdesktop%", False)
+            Case "vDokumente"
+                insert("%userdocuments%", False)
+            Case "vBilder"
+                insert("%userpictures%", False)
+            Case "vMusik"
+                insert("%usermusic%", False)
+            Case "vFavoriten"
+                insert("%userfavorites%", False)
+            Case "vZuletztVerwendet"
+                insert("%userrecent%", False)
+            Case "vSendenAn"
+                insert("%usersendto%", False)
+            Case "vStartmenue"
+                insert("%userstartmenu%", False)
+            Case "vStartmenueProgramme"
+                insert("%userstartmenuprograms%", False)
+            Case "vAutostart"
+                insert("%userstartup%", False)
+            Case "vCookies"
+                insert("%usercookies%", False)
+            Case "vVerlauf"
+                insert("%userhistory%", False)
+            Case "vCache"
+                insert("%userinternetcache%", False)
+            Case "vBetriebssystemPlatform"
+                insert("%osplatform%", False)
+            Case "vBetriebssystemVersion"
+                insert("%osversion%", False)
+            Case "vProzessorAnzahl"
+                insert("%processorcount%", False)
+            Case "vUptime"
+                insert("%uptime%", False)
+            Case "vAktuellesVerzeichnis"
+                insert("%currentdirectory%", False)
         End Select
     End Sub
 End Module

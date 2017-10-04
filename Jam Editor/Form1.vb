@@ -152,7 +152,7 @@ Public Class Form1
         KontextHilfe.main(sender)
     End Sub
 
-    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click, vJahr.Click, vMonat.Click, vMonat0.Click, vTag.Click, vTag0.Click, vStunde.Click, vStunde0.Click, vMinute.Click, vMinute0.Click, vSekunde.Click, vSekunde0.Click
+    Private Sub HelpMenuVariablen(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vZeilenumbruch.Click, v1.Click, v2.Click, v3.Click, vJahr.Click, vMonat.Click, vMonat0.Click, vTag.Click, vTag0.Click, vStunde.Click, vStunde0.Click, vMinute.Click, vMinute0.Click, vSekunde.Click, vSekunde0.Click, vDesktop.Click, vDokumente.Click, vBilder.Click, vMusik.Click, vFavoriten.Click, vZuletztVerwendet.Click, vSendenAn.Click, vStartmenue.Click, vStartmenueProgramme.Click, vAutostart.Click, vCookies.Click, vVerlauf.Click, vCache.Click, vBetriebssystemPlatform.Click, vBetriebssystemVersion.Click, vProzessorAnzahl.Click, vUptime.Click, vAktuellesVerzeichnis.Click
         KontextHilfe.variablen(sender)
     End Sub
 

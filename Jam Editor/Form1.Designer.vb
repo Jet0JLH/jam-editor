@@ -60,12 +60,15 @@ Partial Class Form1
         Me.kLable = New System.Windows.Forms.ToolStripMenuItem()
         Me.kGoto = New System.Windows.Forms.ToolStripMenuItem()
         Me.kGoSub = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.kIf = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfDirExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfFileExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfTaskExist = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfStringEqual = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfStringContain = New System.Windows.Forms.ToolStripMenuItem()
         Me.kIfPingSuccessfull = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.kExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.DateiUndOrdnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.kDelDir = New System.Windows.Forms.ToolStripMenuItem()
@@ -112,12 +115,32 @@ Partial Class Form1
         Me.vMinute0 = New System.Windows.Forms.ToolStripMenuItem()
         Me.vSekunde0 = New System.Windows.Forms.ToolStripMenuItem()
         Me.kSet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vDesktop = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vDokumente = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vBilder = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vMusik = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.vFavoriten = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vZuletztVerwendet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vSendenAn = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.vStartmenue = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vStartmenueProgramme = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vAutostart = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.vCookies = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vVerlauf = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vCache = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vBetriebssystemPlatform = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vBetriebssystemVersion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vProzessorAnzahl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vUptime = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vAktuellesVerzeichnis = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.kIf = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -363,6 +386,17 @@ Partial Class Form1
         Me.kGoSub.Size = New System.Drawing.Size(163, 22)
         Me.kGoSub.Text = "GoSub"
         '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(160, 6)
+        '
+        'kIf
+        '
+        Me.kIf.Name = "kIf"
+        Me.kIf.Size = New System.Drawing.Size(163, 22)
+        Me.kIf.Text = "If"
+        '
         'kIfDirExist
         '
         Me.kIfDirExist.Name = "kIfDirExist"
@@ -400,6 +434,11 @@ Partial Class Form1
         Me.kIfPingSuccessfull.Name = "kIfPingSuccessfull"
         Me.kIfPingSuccessfull.Size = New System.Drawing.Size(163, 22)
         Me.kIfPingSuccessfull.Text = "ifPingSuccessfull"
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(160, 6)
         '
         'kExit
         '
@@ -567,7 +606,7 @@ Partial Class Form1
         '
         'VariablenToolStripMenuItem
         '
-        Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.ZeitToolStripMenuItem, Me.kSet})
+        Me.VariablenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeichenToolStripMenuItem, Me.ZeitToolStripMenuItem, Me.kSet, Me.UserToolStripMenuItem, Me.SystemToolStripMenuItem})
         Me.VariablenToolStripMenuItem.Name = "VariablenToolStripMenuItem"
         Me.VariablenToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.VariablenToolStripMenuItem.Text = "Variablen"
@@ -688,6 +727,143 @@ Partial Class Form1
         Me.kSet.Size = New System.Drawing.Size(152, 22)
         Me.kSet.Text = "set"
         '
+        'UserToolStripMenuItem
+        '
+        Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vDesktop, Me.vDokumente, Me.vBilder, Me.vMusik, Me.ToolStripSeparator8, Me.vFavoriten, Me.vZuletztVerwendet, Me.vSendenAn, Me.ToolStripSeparator9, Me.vStartmenue, Me.vStartmenueProgramme, Me.vAutostart, Me.ToolStripSeparator7, Me.vCookies, Me.vVerlauf, Me.vCache})
+        Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Text = "User"
+        '
+        'vDesktop
+        '
+        Me.vDesktop.Name = "vDesktop"
+        Me.vDesktop.Size = New System.Drawing.Size(195, 22)
+        Me.vDesktop.Text = "Desktop"
+        '
+        'vDokumente
+        '
+        Me.vDokumente.Name = "vDokumente"
+        Me.vDokumente.Size = New System.Drawing.Size(195, 22)
+        Me.vDokumente.Text = "Dokumente"
+        '
+        'vBilder
+        '
+        Me.vBilder.Name = "vBilder"
+        Me.vBilder.Size = New System.Drawing.Size(195, 22)
+        Me.vBilder.Text = "Bilder"
+        '
+        'vMusik
+        '
+        Me.vMusik.Name = "vMusik"
+        Me.vMusik.Size = New System.Drawing.Size(195, 22)
+        Me.vMusik.Text = "Musik"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(192, 6)
+        '
+        'vFavoriten
+        '
+        Me.vFavoriten.Name = "vFavoriten"
+        Me.vFavoriten.Size = New System.Drawing.Size(195, 22)
+        Me.vFavoriten.Text = "Favoriten"
+        '
+        'vZuletztVerwendet
+        '
+        Me.vZuletztVerwendet.Name = "vZuletztVerwendet"
+        Me.vZuletztVerwendet.Size = New System.Drawing.Size(195, 22)
+        Me.vZuletztVerwendet.Text = "Zuletzt verwendet"
+        '
+        'vSendenAn
+        '
+        Me.vSendenAn.Name = "vSendenAn"
+        Me.vSendenAn.Size = New System.Drawing.Size(195, 22)
+        Me.vSendenAn.Text = "Senden an"
+        '
+        'ToolStripSeparator9
+        '
+        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(192, 6)
+        '
+        'vStartmenue
+        '
+        Me.vStartmenue.Name = "vStartmenue"
+        Me.vStartmenue.Size = New System.Drawing.Size(195, 22)
+        Me.vStartmenue.Text = "Startmenü"
+        '
+        'vStartmenueProgramme
+        '
+        Me.vStartmenueProgramme.Name = "vStartmenueProgramme"
+        Me.vStartmenueProgramme.Size = New System.Drawing.Size(195, 22)
+        Me.vStartmenueProgramme.Text = "Startmenü Programme"
+        '
+        'vAutostart
+        '
+        Me.vAutostart.Name = "vAutostart"
+        Me.vAutostart.Size = New System.Drawing.Size(195, 22)
+        Me.vAutostart.Text = "Autostart"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(192, 6)
+        '
+        'vCookies
+        '
+        Me.vCookies.Name = "vCookies"
+        Me.vCookies.Size = New System.Drawing.Size(195, 22)
+        Me.vCookies.Text = "Cookies"
+        '
+        'vVerlauf
+        '
+        Me.vVerlauf.Name = "vVerlauf"
+        Me.vVerlauf.Size = New System.Drawing.Size(195, 22)
+        Me.vVerlauf.Text = "Verlauf"
+        '
+        'vCache
+        '
+        Me.vCache.Name = "vCache"
+        Me.vCache.Size = New System.Drawing.Size(195, 22)
+        Me.vCache.Text = "Cache"
+        '
+        'SystemToolStripMenuItem
+        '
+        Me.SystemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vBetriebssystemPlatform, Me.vBetriebssystemVersion, Me.vProzessorAnzahl, Me.vUptime, Me.vAktuellesVerzeichnis})
+        Me.SystemToolStripMenuItem.Name = "SystemToolStripMenuItem"
+        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SystemToolStripMenuItem.Text = "System"
+        '
+        'vBetriebssystemPlatform
+        '
+        Me.vBetriebssystemPlatform.Name = "vBetriebssystemPlatform"
+        Me.vBetriebssystemPlatform.Size = New System.Drawing.Size(202, 22)
+        Me.vBetriebssystemPlatform.Text = "Betriebssystem Platform"
+        '
+        'vBetriebssystemVersion
+        '
+        Me.vBetriebssystemVersion.Name = "vBetriebssystemVersion"
+        Me.vBetriebssystemVersion.Size = New System.Drawing.Size(202, 22)
+        Me.vBetriebssystemVersion.Text = "Betriebssystem Version"
+        '
+        'vProzessorAnzahl
+        '
+        Me.vProzessorAnzahl.Name = "vProzessorAnzahl"
+        Me.vProzessorAnzahl.Size = New System.Drawing.Size(202, 22)
+        Me.vProzessorAnzahl.Text = "Prozessor Anzahl"
+        '
+        'vUptime
+        '
+        Me.vUptime.Name = "vUptime"
+        Me.vUptime.Size = New System.Drawing.Size(202, 22)
+        Me.vUptime.Text = "Uptime"
+        '
+        'vAktuellesVerzeichnis
+        '
+        Me.vAktuellesVerzeichnis.Name = "vAktuellesVerzeichnis"
+        Me.vAktuellesVerzeichnis.Size = New System.Drawing.Size(202, 22)
+        Me.vAktuellesVerzeichnis.Text = "Aktuelles Verzeichnis"
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Jam Skript|*.jam"
@@ -707,22 +883,6 @@ Partial Class Form1
         Me.RichTextBox2.Size = New System.Drawing.Size(852, 519)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = ""
-        '
-        'kIf
-        '
-        Me.kIf.Name = "kIf"
-        Me.kIf.Size = New System.Drawing.Size(163, 22)
-        Me.kIf.Text = "If"
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(160, 6)
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(160, 6)
         '
         'Form1
         '
@@ -840,5 +1000,28 @@ Partial Class Form1
     Friend WithEvents kIf As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents UserToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vDesktop As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vDokumente As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vBilder As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vMusik As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents vFavoriten As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vZuletztVerwendet As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vSendenAn As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents vStartmenue As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vStartmenueProgramme As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vAutostart As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents vCookies As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vVerlauf As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vCache As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vBetriebssystemPlatform As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vBetriebssystemVersion As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vProzessorAnzahl As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vUptime As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents vAktuellesVerzeichnis As System.Windows.Forms.ToolStripMenuItem
 
 End Class
