@@ -226,18 +226,18 @@
                     insert("goSub " & temp)
                 End If
             Case "kWget"
-                Dim temp As String = InputBox("Welche Datei soll herrunter geladen werden?", "Wget")
+                Dim temp As String = InputBox("Welche Datei soll herrunter geladen werden?", "Download")
                 If temp <> "" Then
-                    Dim temp2 As String = InputBox("Wo soll die Datei gespeichert werden? (Mit Dateinamen angeben!)", "Wget")
+                    Dim temp2 As String = InputBox("Wo soll die Datei gespeichert werden? (Mit Dateinamen angeben!)", "Download")
                     If temp2 <> "" Then
-                        Dim temp3 As String = InputBox("Mit welchem Benutzer soll sich am Server authentifiziert werden? (Nur bei Bedarf angeben, ansonsten abbrechen)", "Wget")
+                        Dim temp3 As String = InputBox("Mit welchem Benutzer soll sich am Server authentifiziert werden? (Nur bei Bedarf angeben, ansonsten abbrechen)", "Download")
                         If temp3 <> "" Then
-                            Dim temp4 As String = InputBox("Mit welchem Passwort soll sich authentifiziert werden?", "Wget")
+                            Dim temp4 As String = InputBox("Mit welchem Passwort soll sich authentifiziert werden?", "Download")
                             If temp4 <> "" Then
-                                insert("wget " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
+                                insert("Download " & temp & "|" & temp2 & "|" & temp3 & "|" & temp4)
                             End If
                         Else
-                            insert("wget " & temp & "|" & temp2)
+                            insert("Download " & temp & "|" & temp2)
                         End If
                     End If
                 End If

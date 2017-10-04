@@ -340,25 +340,25 @@ Partial Class Form1
         'kTitle
         '
         Me.kTitle.Name = "kTitle"
-        Me.kTitle.Size = New System.Drawing.Size(113, 22)
+        Me.kTitle.Size = New System.Drawing.Size(152, 22)
         Me.kTitle.Text = "title"
         '
         'kVisible
         '
         Me.kVisible.Name = "kVisible"
-        Me.kVisible.Size = New System.Drawing.Size(113, 22)
+        Me.kVisible.Size = New System.Drawing.Size(152, 22)
         Me.kVisible.Text = "visible"
         '
         'kLog
         '
         Me.kLog.Name = "kLog"
-        Me.kLog.Size = New System.Drawing.Size(113, 22)
+        Me.kLog.Size = New System.Drawing.Size(152, 22)
         Me.kLog.Text = "log"
         '
         'kInclude
         '
         Me.kInclude.Name = "kInclude"
-        Me.kInclude.Size = New System.Drawing.Size(113, 22)
+        Me.kInclude.Size = New System.Drawing.Size(152, 22)
         Me.kInclude.Text = "include"
         '
         'EntscheidungenToolStripMenuItem
@@ -527,7 +527,7 @@ Partial Class Form1
         '
         Me.kWget.Name = "kWget"
         Me.kWget.Size = New System.Drawing.Size(160, 22)
-        Me.kWget.Text = "wget"
+        Me.kWget.Text = "Download"
         '
         'TasksToolStripMenuItem
         '
@@ -615,7 +615,7 @@ Partial Class Form1
         '
         Me.ZeichenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vZeilenumbruch, Me.v1, Me.v2, Me.v3})
         Me.ZeichenToolStripMenuItem.Name = "ZeichenToolStripMenuItem"
-        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeichenToolStripMenuItem.Text = "Sonderzeichen"
         '
         'vZeilenumbruch
@@ -652,7 +652,7 @@ Partial Class Form1
         '
         Me.ZeitToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vJahr, Me.vMonat, Me.vTag, Me.vStunde, Me.vMinute, Me.vSekunde, Me.vMonat0, Me.vTag0, Me.vStunde0, Me.vMinute0, Me.vSekunde0})
         Me.ZeitToolStripMenuItem.Name = "ZeitToolStripMenuItem"
-        Me.ZeitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeitToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeitToolStripMenuItem.Text = "Zeit"
         '
         'vJahr
@@ -724,14 +724,14 @@ Partial Class Form1
         'kSet
         '
         Me.kSet.Name = "kSet"
-        Me.kSet.Size = New System.Drawing.Size(152, 22)
+        Me.kSet.Size = New System.Drawing.Size(151, 22)
         Me.kSet.Text = "set"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vDesktop, Me.vDokumente, Me.vBilder, Me.vMusik, Me.ToolStripSeparator8, Me.vFavoriten, Me.vZuletztVerwendet, Me.vSendenAn, Me.ToolStripSeparator9, Me.vStartmenue, Me.vStartmenueProgramme, Me.vAutostart, Me.ToolStripSeparator7, Me.vCookies, Me.vVerlauf, Me.vCache})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.UserToolStripMenuItem.Text = "User"
         '
         'vDesktop
@@ -831,7 +831,7 @@ Partial Class Form1
         '
         Me.SystemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vBetriebssystemPlatform, Me.vBetriebssystemVersion, Me.vProzessorAnzahl, Me.vUptime, Me.vAktuellesVerzeichnis})
         Me.SystemToolStripMenuItem.Name = "SystemToolStripMenuItem"
-        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.SystemToolStripMenuItem.Text = "System"
         '
         'vBetriebssystemPlatform
