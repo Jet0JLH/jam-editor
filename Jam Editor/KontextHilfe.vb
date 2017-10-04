@@ -443,23 +443,23 @@
             Case "vMonat"
                 insert("%month%", False)
             Case "vMonat0"
-                insert("%MONTH%", False)
+                insert("%0month%", False)
             Case "vTag"
                 insert("%day%", False)
             Case "vTag0"
-                insert("%DAY%", False)
+                insert("%0day%", False)
             Case "vStunde"
                 insert("%hour%", False)
             Case "vStunde0"
-                insert("%HOUR%", False)
+                insert("%0hour%", False)
             Case "vMinute"
                 insert("%minute%", False)
             Case "vMinute0"
-                insert("%MINUTE%", False)
+                insert("%0minute%", False)
             Case "vSekunde"
                 insert("%second%", False)
             Case "vSekunde0"
-                insert("%SECOND%", False)
+                insert("%0second%", False)
         End Select
     End Sub
 End Module
