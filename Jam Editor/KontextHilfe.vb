@@ -419,6 +419,30 @@
                     End If
                     insert(buildString)
                 End If
+            Case "kSize"
+                Dim temp As String = InputBox("Wie soll die neue Breite des Jam-re Fensters sein?" & vbCrLf & "Alternativ kann auch das Schlüsselwort full für Fullscreen und default für die Standardgröße vergeben werden.", "Size")
+                If temp <> "" Then
+                    If temp.ToLower = "full" Then
+                        insert("size full")
+                    ElseIf temp.ToLower = "default" Then
+                        insert("size default")
+                    Else
+                        Dim temp2 As String = InputBox("Wie hoch soll das Jam-re Fenster sein?", "Size")
+                        If temp2 <> "" Then
+                            insert("size " & temp & "|" & temp2)
+                        End If
+                    End If
+                End If
+            Case "kOpacity"
+                Dim temp As String = InputBox("Zu wie viel Prozent soll das Fenster sichtbar sein?", "Opacity")
+                If temp <> "" Then
+                    insert("opacity " & temp)
+                End If
+            Case "kTopMost"
+                Dim temp As String = InputBox("Soll das Fenster immer im Vordergrund sein?" & vbCrLf & "Nur True oder False eintragen.", "TopMost")
+                If temp <> "" Then
+                    insert("topMost " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
