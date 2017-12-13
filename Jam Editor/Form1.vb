@@ -3,6 +3,7 @@ Public Class Form1
     Dim saveFile As String = ""
     Dim getFileSizeThread As Threading.Thread
     Dim formIsClosing As Boolean = False
+    Dim jamrePath As String = ""
     Private Sub SchließenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SchließenToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -233,5 +234,42 @@ Public Class Form1
         CheckForIllegalCrossThreadCalls = False
         getFileSizeThread = New Threading.Thread(AddressOf getFileSize)
         getFileSizeThread.Start()
+    End Sub
+
+    Private Sub SkriptSpeichernUndAusführenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SkriptSpeichernUndAusfuehrenToolStripMenuItem.Click
+        SpeichernToolStripMenuItem_Click(New Object, New EventArgs)
+        If saveFile = "" Then
+            MsgBox("Ausführen wurde abgebrochen. Die Datei muss gespeichert werden!", MsgBoxStyle.Critical)
+            Exit Sub
+        Else
+            Process.Start(jamrePath, Chr(34) & saveFile & Chr(34))
+        End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            If My.Computer.FileSystem.FileExists("editor.conf") Then
+                Dim tempConf As XDocument = XDocument.Load("editor.conf")
+                jamrePath = tempConf.Element("conf").Element("jamre").Element("path").Value
+
+                If jamrePath <> "" Then
+                    SkriptSpeichernUndAusfuehrenToolStripMenuItem.Visible = True
+                    SkriptSpeichernUndAusfuehrenToolStripMenuItem.Enabled = True
+                    AusführenMitParameternToolStripMenuItem.Enabled = True
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Die Konfigdatei ist beschädigt!")
+        End Try
+    End Sub
+
+    Private Sub AusführenMitParameternToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusführenMitParameternToolStripMenuItem.Click
+        SpeichernToolStripMenuItem_Click(New Object, New EventArgs)
+        If saveFile = "" Then
+            MsgBox("Ausführen wurde abgebrochen. Die Datei muss gespeichert werden!", MsgBoxStyle.Critical)
+            Exit Sub
+        Else
+            Process.Start(jamrePath, Chr(34) & saveFile & Chr(34) & " " & InputBox("Mit welchen Parametern soll Jam-re zusätzlich gestartet werden?", "Parametereingabe"))
+        End If
     End Sub
 End Class
