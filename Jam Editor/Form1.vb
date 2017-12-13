@@ -121,6 +121,7 @@ Public Class Form1
             Try
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(Environment.GetCommandLineArgs(1), System.Text.Encoding.Default)
                 saveFile = Environment.GetCommandLineArgs(1)
+                Me.Text = "Jam Skripteditor - " & IO.Path.GetFileName(saveFile)
             Catch ex As Exception
                 MsgBox("Datei konnte nicht geladen werden!" & vbCrLf & vbCrLf & ex.ToString)
             End Try
