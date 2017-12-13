@@ -254,6 +254,10 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Asc(Application.ExecutablePath.Substring(0, 1)) >= 65 And Asc(Application.ExecutablePath.Substring(0, 1)) <= 90 Then
+            ChDrive(Application.ExecutablePath.Substring(0, 1))
+        End If
+        ChDir(IO.Path.GetDirectoryName(Application.ExecutablePath))
         Try
             If My.Computer.FileSystem.FileExists("editor.conf") Then
                 Dim tempConf As XDocument = XDocument.Load("editor.conf")
