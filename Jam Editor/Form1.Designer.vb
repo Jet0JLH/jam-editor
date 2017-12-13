@@ -146,6 +146,7 @@ Partial Class Form1
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AusführenMitParameternToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kFontSize = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -337,7 +338,7 @@ Partial Class Form1
         '
         'ErscheinungsbildToolStripMenuItem
         '
-        Me.ErscheinungsbildToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTitle, Me.kVisible, Me.kLog, Me.kInclude, Me.kSize, Me.kOpacity, Me.kTopMost})
+        Me.ErscheinungsbildToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.kTitle, Me.kVisible, Me.kLog, Me.kInclude, Me.kSize, Me.kOpacity, Me.kTopMost, Me.kFontSize})
         Me.ErscheinungsbildToolStripMenuItem.Name = "ErscheinungsbildToolStripMenuItem"
         Me.ErscheinungsbildToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ErscheinungsbildToolStripMenuItem.Text = "Sonderfunktionen"
@@ -345,43 +346,43 @@ Partial Class Form1
         'kTitle
         '
         Me.kTitle.Name = "kTitle"
-        Me.kTitle.Size = New System.Drawing.Size(113, 22)
+        Me.kTitle.Size = New System.Drawing.Size(152, 22)
         Me.kTitle.Text = "title"
         '
         'kVisible
         '
         Me.kVisible.Name = "kVisible"
-        Me.kVisible.Size = New System.Drawing.Size(113, 22)
+        Me.kVisible.Size = New System.Drawing.Size(152, 22)
         Me.kVisible.Text = "visible"
         '
         'kLog
         '
         Me.kLog.Name = "kLog"
-        Me.kLog.Size = New System.Drawing.Size(113, 22)
+        Me.kLog.Size = New System.Drawing.Size(152, 22)
         Me.kLog.Text = "log"
         '
         'kInclude
         '
         Me.kInclude.Name = "kInclude"
-        Me.kInclude.Size = New System.Drawing.Size(113, 22)
+        Me.kInclude.Size = New System.Drawing.Size(152, 22)
         Me.kInclude.Text = "include"
         '
         'kSize
         '
         Me.kSize.Name = "kSize"
-        Me.kSize.Size = New System.Drawing.Size(113, 22)
+        Me.kSize.Size = New System.Drawing.Size(152, 22)
         Me.kSize.Text = "size"
         '
         'kOpacity
         '
         Me.kOpacity.Name = "kOpacity"
-        Me.kOpacity.Size = New System.Drawing.Size(113, 22)
+        Me.kOpacity.Size = New System.Drawing.Size(152, 22)
         Me.kOpacity.Text = "opacity"
         '
         'kTopMost
         '
         Me.kTopMost.Name = "kTopMost"
-        Me.kTopMost.Size = New System.Drawing.Size(113, 22)
+        Me.kTopMost.Size = New System.Drawing.Size(152, 22)
         Me.kTopMost.Text = "topMost"
         '
         'EntscheidungenToolStripMenuItem
@@ -925,6 +926,12 @@ Partial Class Form1
         Me.AusführenMitParameternToolStripMenuItem.Text = "ausführen mit parametern"
         Me.AusführenMitParameternToolStripMenuItem.Visible = False
         '
+        'kFontSize
+        '
+        Me.kFontSize.Name = "kFontSize"
+        Me.kFontSize.Size = New System.Drawing.Size(152, 22)
+        Me.kFontSize.Text = "fontSize"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1069,5 +1076,6 @@ Partial Class Form1
     Friend WithEvents kTopMost As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SkriptSpeichernUndAusfuehrenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AusführenMitParameternToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents kFontSize As System.Windows.Forms.ToolStripMenuItem
 
 End Class

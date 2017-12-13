@@ -420,14 +420,14 @@
                     insert(buildString)
                 End If
             Case "kSize"
-                Dim temp As String = InputBox("Wie soll die neue Breite des Jam-re Fensters sein?" & vbCrLf & "Alternativ kann auch das Schlüsselwort full für Fullscreen und default für die Standardgröße vergeben werden.", "Size")
+                Dim temp As String = InputBox("Wie viel Pixel breit soll das Jam-re Fensters sein?" & vbCrLf & "Alternativ kann auch das Schlüsselwort full für Fullscreen und default für die Standardgröße vergeben werden.", "Size")
                 If temp <> "" Then
                     If temp.ToLower = "full" Then
                         insert("size full")
                     ElseIf temp.ToLower = "default" Then
                         insert("size default")
                     Else
-                        Dim temp2 As String = InputBox("Wie hoch soll das Jam-re Fenster sein?", "Size")
+                        Dim temp2 As String = InputBox("Wie viel Pixel hoch soll das Jam-re Fenster sein?", "Size")
                         If temp2 <> "" Then
                             insert("size " & temp & "|" & temp2)
                         End If
@@ -442,6 +442,13 @@
                 Dim temp As String = InputBox("Soll das Fenster immer im Vordergrund sein?" & vbCrLf & "Nur True oder False eintragen.", "TopMost")
                 If temp <> "" Then
                     insert("topMost " & temp)
+                End If
+            Case "kFontSize"
+                Dim temp As String = InputBox("Wie viel Pixel soll die Schrift groß sein?" & vbCrLf & "Nur Werte zwischen 5 und 40 eingeben.", "FontSize")
+                If temp <> "" Then
+                    If temp > 40 Then temp = 40
+                    If temp < 5 Then temp = 5
+                    insert("fontSize " & temp)
                 End If
         End Select
     End Sub
