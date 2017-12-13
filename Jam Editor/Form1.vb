@@ -14,6 +14,9 @@ Public Class Form1
                 clearBox()
                 saveFile = ""
             End If
+        Else
+            clearBox()
+            saveFile = ""
         End If
     End Sub
 
@@ -27,6 +30,7 @@ Public Class Form1
                 End If
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
                 saveFile = OpenFileDialog1.FileName
+                Me.Text = "Jam Skripteditor - " & IO.Path.GetFileName(saveFile)
             Catch ex As Exception
                 MsgBox("Ein Fehler beim Laden des Skripts ist aufgetreten!" & vbCrLf & vbCrLf & ex.ToString)
             End Try
@@ -38,6 +42,7 @@ Public Class Form1
         While RichTextBox1.CanUndo = True
             RichTextBox1.ClearUndo()
         End While
+        Me.Text = "Jam Skripteditor"
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.formClosing
@@ -143,6 +148,7 @@ Public Class Form1
     Sub speichern(ByVal pfad As String)
         Try
             My.Computer.FileSystem.WriteAllText(pfad, RichTextBox1.Text.Replace(Chr(10), Chr(13) & Chr(10)), False)
+            Me.Text = "Jam Skripteditor - " & IO.Path.GetFileName(saveFile)
             MsgBox("Erfolgreich gespeichert")
         Catch ex As Exception
             MsgBox("Es ist ein Fehler beim Speichern aufgetreten!" & vbCrLf & vbCrLf & ex.ToString, MsgBoxStyle.Critical)
