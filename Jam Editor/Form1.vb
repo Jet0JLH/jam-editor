@@ -259,15 +259,21 @@ Public Class Form1
         End If
         ChDir(IO.Path.GetDirectoryName(Application.ExecutablePath))
         Try
-            If My.Computer.FileSystem.FileExists("editor.conf") Then
-                Dim tempConf As XDocument = XDocument.Load("editor.conf")
-                jamrePath = tempConf.Element("conf").Element("jamre").Element("path").Value
-
-                If jamrePath <> "" Then
-                    SkriptSpeichernUndAusfuehrenToolStripMenuItem.Visible = True
-                    SkriptSpeichernUndAusfuehrenToolStripMenuItem.Enabled = True
-                    AusführenMitParameternToolStripMenuItem.Enabled = True
+            Dim tempJamrePath As String = My.Computer.Registry.GetValue("HKEY_CLASSES_ROOT\jam\shell\open\command", "", "")
+            Dim quotsCount As Byte = 0
+            For Each item In tempJamrePath
+                If item = Chr(34) Then
+                    quotsCount += 1
+                    If quotsCount = 2 Then Exit For
+                Else
+                    jamrePath &= item
                 End If
+            Next
+            If jamrePath <> "" Then
+                SkriptSpeichernUndAusfuehrenToolStripMenuItem.Visible = True
+                SkriptSpeichernUndAusfuehrenToolStripMenuItem.Enabled = True
+                AusführenMitParameternToolStripMenuItem.Enabled = True
+                AusführenMitParameternToolStripMenuItem.Visible = True
             End If
         Catch ex As Exception
             MsgBox("Die Konfigdatei ist beschädigt!")

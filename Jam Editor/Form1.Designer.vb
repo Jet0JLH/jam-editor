@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,12 @@ Partial Class Form1
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DateiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NeuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LadenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SpeichernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SpeichernUnterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AusführenMitParameternToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.AufUpdatesPrüfenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -146,11 +140,17 @@ Partial Class Form1
         Me.vProzessorAnzahl = New System.Windows.Forms.ToolStripMenuItem()
         Me.vUptime = New System.Windows.Forms.ToolStripMenuItem()
         Me.JamreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.vAktuellesVerzeichnis = New System.Windows.Forms.ToolStripMenuItem()
         Me.vApplicationPath = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.vAktuellesVerzeichnis = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NeuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LadenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SpeichernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SpeichernUnterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AusführenMitParameternToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -172,76 +172,29 @@ Partial Class Form1
         Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
         Me.DateiToolStripMenuItem.Text = "Datei"
         '
-        'NeuToolStripMenuItem
-        '
-        Me.NeuToolStripMenuItem.Name = "NeuToolStripMenuItem"
-        Me.NeuToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NeuToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.NeuToolStripMenuItem.Text = "Neu"
-        '
-        'LadenToolStripMenuItem
-        '
-        Me.LadenToolStripMenuItem.Name = "LadenToolStripMenuItem"
-        Me.LadenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.LadenToolStripMenuItem.Text = "Laden"
-        '
-        'SpeichernToolStripMenuItem
-        '
-        Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.SpeichernToolStripMenuItem.Text = "Speichern"
-        '
-        'SpeichernUnterToolStripMenuItem
-        '
-        Me.SpeichernUnterToolStripMenuItem.Name = "SpeichernUnterToolStripMenuItem"
-        Me.SpeichernUnterToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SpeichernUnterToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.SpeichernUnterToolStripMenuItem.Text = "Speichern unter"
-        '
-        'SkriptSpeichernUndAusfuehrenToolStripMenuItem
-        '
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Enabled = False
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Name = "SkriptSpeichernUndAusfuehrenToolStripMenuItem"
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Text = "Speichern und ausführen"
-        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Visible = False
-        '
-        'AusführenMitParameternToolStripMenuItem
-        '
-        Me.AusführenMitParameternToolStripMenuItem.Enabled = False
-        Me.AusführenMitParameternToolStripMenuItem.Name = "AusführenMitParameternToolStripMenuItem"
-        Me.AusführenMitParameternToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Shift Or System.Windows.Forms.Keys.F5), System.Windows.Forms.Keys)
-        Me.AusführenMitParameternToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.AusführenMitParameternToolStripMenuItem.Text = "ausführen mit parametern"
-        Me.AusführenMitParameternToolStripMenuItem.Visible = False
-        '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(311, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(313, 6)
         '
         'AufUpdatesPrüfenToolStripMenuItem
         '
         Me.AufUpdatesPrüfenToolStripMenuItem.Name = "AufUpdatesPrüfenToolStripMenuItem"
-        Me.AufUpdatesPrüfenToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.AufUpdatesPrüfenToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
         Me.AufUpdatesPrüfenToolStripMenuItem.Text = "Auf Updates prüfen"
         Me.AufUpdatesPrüfenToolStripMenuItem.Visible = False
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(311, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(313, 6)
         Me.ToolStripSeparator1.Visible = False
         '
         'SchließenToolStripMenuItem
         '
         Me.SchließenToolStripMenuItem.Name = "SchließenToolStripMenuItem"
         Me.SchließenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.SchließenToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.SchließenToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
         Me.SchließenToolStripMenuItem.Text = "Schließen"
         '
         'InfoToolStripMenuItem
@@ -679,7 +632,7 @@ Partial Class Form1
         '
         Me.ZeichenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vZeilenumbruch, Me.v1, Me.v2, Me.v3})
         Me.ZeichenToolStripMenuItem.Name = "ZeichenToolStripMenuItem"
-        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeichenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeichenToolStripMenuItem.Text = "Sonderzeichen"
         '
         'vZeilenumbruch
@@ -716,7 +669,7 @@ Partial Class Form1
         '
         Me.ZeitToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vJahr, Me.vMonat, Me.vTag, Me.vStunde, Me.vMinute, Me.vSekunde, Me.vMonat0, Me.vTag0, Me.vStunde0, Me.vMinute0, Me.vSekunde0})
         Me.ZeitToolStripMenuItem.Name = "ZeitToolStripMenuItem"
-        Me.ZeitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ZeitToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ZeitToolStripMenuItem.Text = "Zeit"
         '
         'vJahr
@@ -788,14 +741,14 @@ Partial Class Form1
         'kSet
         '
         Me.kSet.Name = "kSet"
-        Me.kSet.Size = New System.Drawing.Size(152, 22)
+        Me.kSet.Size = New System.Drawing.Size(151, 22)
         Me.kSet.Text = "set"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vDesktop, Me.vDokumente, Me.vBilder, Me.vMusik, Me.ToolStripSeparator8, Me.vFavoriten, Me.vZuletztVerwendet, Me.vSendenAn, Me.ToolStripSeparator9, Me.vStartmenue, Me.vStartmenueProgramme, Me.vAutostart, Me.ToolStripSeparator7, Me.vCookies, Me.vVerlauf, Me.vCache})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.UserToolStripMenuItem.Text = "User"
         '
         'vDesktop
@@ -895,7 +848,7 @@ Partial Class Form1
         '
         Me.SystemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vBetriebssystemPlatform, Me.vBetriebssystemVersion, Me.vProzessorAnzahl, Me.vUptime})
         Me.SystemToolStripMenuItem.Name = "SystemToolStripMenuItem"
-        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SystemToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.SystemToolStripMenuItem.Text = "System"
         '
         'vBetriebssystemPlatform
@@ -926,8 +879,14 @@ Partial Class Form1
         '
         Me.JamreToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.vAktuellesVerzeichnis, Me.vApplicationPath})
         Me.JamreToolStripMenuItem.Name = "JamreToolStripMenuItem"
-        Me.JamreToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.JamreToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.JamreToolStripMenuItem.Text = "jam-re"
+        '
+        'vAktuellesVerzeichnis
+        '
+        Me.vAktuellesVerzeichnis.Name = "vAktuellesVerzeichnis"
+        Me.vAktuellesVerzeichnis.Size = New System.Drawing.Size(183, 22)
+        Me.vAktuellesVerzeichnis.Text = "Aktuelles Verzeichnis"
         '
         'vApplicationPath
         '
@@ -955,11 +914,58 @@ Partial Class Form1
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = ""
         '
-        'vAktuellesVerzeichnis
+        'NeuToolStripMenuItem
         '
-        Me.vAktuellesVerzeichnis.Name = "vAktuellesVerzeichnis"
-        Me.vAktuellesVerzeichnis.Size = New System.Drawing.Size(183, 22)
-        Me.vAktuellesVerzeichnis.Text = "Aktuelles Verzeichnis"
+        Me.NeuToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.file
+        Me.NeuToolStripMenuItem.Name = "NeuToolStripMenuItem"
+        Me.NeuToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.NeuToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.NeuToolStripMenuItem.Text = "Neu"
+        '
+        'LadenToolStripMenuItem
+        '
+        Me.LadenToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.document
+        Me.LadenToolStripMenuItem.Name = "LadenToolStripMenuItem"
+        Me.LadenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.LadenToolStripMenuItem.Text = "Laden"
+        '
+        'SpeichernToolStripMenuItem
+        '
+        Me.SpeichernToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.save
+        Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
+        Me.SpeichernToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.SpeichernToolStripMenuItem.Text = "Speichern"
+        '
+        'SpeichernUnterToolStripMenuItem
+        '
+        Me.SpeichernUnterToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.save
+        Me.SpeichernUnterToolStripMenuItem.Name = "SpeichernUnterToolStripMenuItem"
+        Me.SpeichernUnterToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SpeichernUnterToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.SpeichernUnterToolStripMenuItem.Text = "Speichern unter"
+        '
+        'SkriptSpeichernUndAusfuehrenToolStripMenuItem
+        '
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Enabled = False
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.run
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Name = "SkriptSpeichernUndAusfuehrenToolStripMenuItem"
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Text = "Speichern und ausführen"
+        Me.SkriptSpeichernUndAusfuehrenToolStripMenuItem.Visible = False
+        '
+        'AusführenMitParameternToolStripMenuItem
+        '
+        Me.AusführenMitParameternToolStripMenuItem.Enabled = False
+        Me.AusführenMitParameternToolStripMenuItem.Image = Global.Jam_Editor.My.Resources.Resources.run
+        Me.AusführenMitParameternToolStripMenuItem.Name = "AusführenMitParameternToolStripMenuItem"
+        Me.AusführenMitParameternToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Shift Or System.Windows.Forms.Keys.F5), System.Windows.Forms.Keys)
+        Me.AusführenMitParameternToolStripMenuItem.Size = New System.Drawing.Size(316, 22)
+        Me.AusführenMitParameternToolStripMenuItem.Text = "Ausführen mit Parametern"
+        Me.AusführenMitParameternToolStripMenuItem.Visible = False
         '
         'Form1
         '
