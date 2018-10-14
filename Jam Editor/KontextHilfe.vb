@@ -450,6 +450,16 @@
                     If temp < 5 Then temp = 5
                     insert("fontSize " & temp)
                 End If
+            Case "kChangeDir"
+                Dim temp As String = InputBox("In welches Verzeichnis soll gewechselt werden?", "ChangeDir")
+                If temp <> "" Then
+                    insert("cd " & temp)
+                End If
+            Case "kClearLine"
+                Dim temp As String = InputBox("Welche Zeile in der Jam-re Konsole soll gelöscht werden?" & vbCrLf & "Nur Zahlen oder das Schlüsselwort 'first'/'last' eingeben", "ClearLine")
+                If temp <> "" Then
+                    insert("clearLine " & temp)
+                End If
         End Select
     End Sub
     Public Sub insert(ByVal word As String, Optional ByVal ending As Boolean = True)
@@ -492,41 +502,43 @@
             Case "vSekunde0"
                 insert("%0second%", False)
             Case "vDesktop"
-                insert("%userdesktop%", False)
+                insert("%userDesktop%", False)
             Case "vDokumente"
-                insert("%userdocuments%", False)
+                insert("%userDocuments%", False)
             Case "vBilder"
-                insert("%userpictures%", False)
+                insert("%userPictures%", False)
             Case "vMusik"
-                insert("%usermusic%", False)
+                insert("%userMusic%", False)
             Case "vFavoriten"
-                insert("%userfavorites%", False)
+                insert("%userFavorites%", False)
             Case "vZuletztVerwendet"
-                insert("%userrecent%", False)
+                insert("%userRecent%", False)
             Case "vSendenAn"
-                insert("%usersendto%", False)
+                insert("%userSendTo%", False)
             Case "vStartmenue"
-                insert("%userstartmenu%", False)
+                insert("%userStartMenu%", False)
             Case "vStartmenueProgramme"
-                insert("%userstartmenuprograms%", False)
+                insert("%userStartmenuPrograms%", False)
             Case "vAutostart"
-                insert("%userstartup%", False)
+                insert("%userStartup%", False)
             Case "vCookies"
-                insert("%usercookies%", False)
+                insert("%userCookies%", False)
             Case "vVerlauf"
-                insert("%userhistory%", False)
+                insert("%userHistory%", False)
             Case "vCache"
-                insert("%userinternetcache%", False)
+                insert("%userInternetCache%", False)
             Case "vBetriebssystemPlatform"
-                insert("%osplatform%", False)
+                insert("%osPlatform%", False)
             Case "vBetriebssystemVersion"
-                insert("%osversion%", False)
+                insert("%osVersion%", False)
             Case "vProzessorAnzahl"
-                insert("%processorcount%", False)
+                insert("%processorCount%", False)
             Case "vUptime"
                 insert("%uptime%", False)
             Case "vAktuellesVerzeichnis"
-                insert("%currentdirectory%", False)
+                insert("%currentDirectory%", False)
+            Case "vApplicationPath"
+                insert("%applicationPath%", False)
         End Select
     End Sub
 End Module
